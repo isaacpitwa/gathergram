@@ -92,15 +92,15 @@ const HomePage = () => {
           />
         </div>
       </section>
-      <section className="flex items-center sectionWrapper bg-black  py-8 gap-x-4">
-        <h3 className="w-1/2 text-white">"Powerful tool to manage your wedding, engage guests, and celebrate together effortlessly."</h3>
-        <div className="flex md:gap-x-4 gap-x-2">
+      <section className="flex  flex-col md:flex-row items-center sectionWrapper bg-black  py-8 gap-x-4 justify-center  gap-y-4">
+        <h3 className="md:w-1/2 text-white text">"Powerful tool to manage your wedding, engage guests, and celebrate together effortlessly."</h3>
+        <div className="flex flex-col md:flex-row md:gap-x-4 gap-x-2  gap-y-4 items-center">
             <div className="bg-primary flex items-center justify-center  rounded-full p-4">
                 <ConnectIcon className='text-primary' />
             </div>
             <p className="text-white">Connect with your guests</p>
         </div>
-        <div className="flex md:gap-x-4 gap-x-2">
+        <div className="flex flex-col md:flex-row  gap-y-4 md:gap-x-4 gap-x-2 items-center ">
             <div className="bg-primary flex items-center justify-center rounded-full  p-6">
                 <StarIcon className='text-primary' />
             </div>
