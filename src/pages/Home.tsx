@@ -6,9 +6,12 @@ import Profile1 from "../assets/images/profile1.png";
 import Profile2 from "../assets/images/profile2.png";
 import Profile3 from "../assets/images/profile3.png";
 import Profile4 from "../assets/images/profile4.png";
-import { ReactComponent as ConnectIcon } from '../assets/icons/connect.svg'
-import { ReactComponent as StarIcon } from '../assets/icons/star.svg'
-
+import { ReactComponent as ConnectIcon } from "../assets/icons/connect.svg";
+import { ReactComponent as StarIcon } from "../assets/icons/star.svg";
+import { ReactComponent as EventsManagementIcon } from "../assets/icons/eventManagement.svg";
+import { ReactComponent as GuestInteractionIcon } from "../assets/icons/guestInteractions.svg";
+import { ReactComponent as DonateContributeIcon } from "../assets/icons/donateAndContribute.svg";
+import { ReactComponent as CustomLoveStoryIcon } from "../assets/icons/loveStory.svg";
 
 const HomePage = () => {
   return (
@@ -49,7 +52,7 @@ const HomePage = () => {
                 alt="Profile 2"
                 className="w-16 h-16 rounded-full"
                 style={{
-                    marginLeft: '-24px'
+                  marginLeft: "-24px",
                 }}
               />
               <img
@@ -57,7 +60,7 @@ const HomePage = () => {
                 alt="Profile 3"
                 className="w-16 h-16 rounded-full"
                 style={{
-                    marginLeft: '-24px'
+                  marginLeft: "-24px",
                 }}
               />
               <img
@@ -65,19 +68,23 @@ const HomePage = () => {
                 alt="Profile 4"
                 className="w-16 h-16 rounded-full"
                 style={{
-                    marginLeft: '-24px'
+                  marginLeft: "-24px",
                 }}
               />
-              <div className="flex items-center justify-center w-16 h-16 bg-blue-200 text-black rounded-full "
-              style={{
-                marginLeft: '-24px'
-            }}>
+              <div
+                className="flex items-center justify-center w-16 h-16 bg-blue-200 text-black rounded-full "
+                style={{
+                  marginLeft: "-24px",
+                }}
+              >
                 +2k
               </div>
             </div>
 
             {/* Text */}
-            <div className="text-black font-medium text-sm">+2K People Joined!</div>
+            <div className="text-black font-medium text-sm">
+              +2K People Joined!
+            </div>
           </div>
         </div>
         <div className="my-4 md:my-0">
@@ -93,21 +100,55 @@ const HomePage = () => {
         </div>
       </section>
       <section className="flex  flex-col md:flex-row items-center sectionWrapper bg-black  py-8 gap-x-4 justify-center  gap-y-4">
-        <h3 className="md:w-1/2 text-white text">"Powerful tool to manage your wedding, engage guests, and celebrate together effortlessly."</h3>
+        <h3 className="md:w-1/2 text-white text text-center md:text-left mb-8 md:mb-0">
+          "Powerful tool to manage your wedding, engage guests, and celebrate
+          together effortlessly."
+        </h3>
         <div className="flex flex-col md:flex-row md:gap-x-4 gap-x-2  gap-y-4 items-center">
-            <div className="bg-primary flex items-center justify-center  rounded-full p-4">
-                <ConnectIcon className='text-primary' />
-            </div>
-            <p className="text-white">Connect with your guests</p>
+          <div className="bg-primary flex items-center justify-center  rounded-full p-4">
+            <ConnectIcon className="text-primary" />
+          </div>
+          <p className="text-white">Connect with your guests</p>
         </div>
         <div className="flex flex-col md:flex-row  gap-y-4 md:gap-x-4 gap-x-2 items-center ">
-            <div className="bg-primary flex items-center justify-center rounded-full  p-6">
-                <StarIcon className='text-primary' />
-            </div>
-            <p className="text-white">Easy event management</p>
+          <div className="bg-primary flex items-center justify-center rounded-full  p-6">
+            <StarIcon className="text-primary" />
+          </div>
+          <p className="text-white">Easy event management</p>
         </div>
       </section>
-      
+      <section className=" flex flex-col sectionWrapper py-16 items-center">
+        <div className="pt-4  text-center pb-16">
+          <h3 className="text-xl font-semibold ">Our Features</h3>
+          <p className="text-sm mt-2 w-4/5 ">
+            "Easily create and manage your wedding events, from the ceremony to
+            the reception.”
+          </p>
+        </div>
+        <div className="bg-black pt-2 flex flex-col md:flex-row">
+                <div className="pt-20 pb-8 px-8 flex flex-col">
+                    <EventsManagementIcon />
+                    <h5 className="text-white  font-bold  mt-6">Event Management</h5>
+                    <p className="text-white  text-xs mt-2 font-light">Increased conversion and expension on new markets Dynamic business devolopment.</p>
+                </div>
+                <div className="pt-20 pb-8 px-8 bg-light_pink ">
+                    <GuestInteractionIcon />
+                    <h5 className="text-black  font-bold  mt-6">Guest Interaction</h5>
+                    <p className="text-black  text-xs mt-2 font-light">Excute pay outs & refunds straight to your customer`s bank account via Finpay. Increase satisfaction and retention.</p>
+                </div>
+                <div className="pt-20 pb-8 px-8">
+                    <DonateContributeIcon />
+                    <h5 className="text-white  font-bold  mt-6">Donate & Contribute</h5>
+                    <p className="text-white  text-xs mt-2 font-light">No cards or payment details insertation, no additional registration or app download by your customer`s.</p>
+                </div>
+                <div className="pt-20 pb-8 px-8">
+                    <CustomLoveStoryIcon />
+                    <h5 className="text-white  font-bold  mt-6">Custom Love Story Page</h5>
+                    <p className="text-white  text-xs mt-2 font-light">Personal informations is encrypted and protected by industry standardbanking security.</p>
+                </div>
+
+        </div>
+      </section>
     </div>
   );
 };
