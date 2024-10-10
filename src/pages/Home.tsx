@@ -12,20 +12,20 @@ const HomePage = () => {
     <div>
       <Header />
       {/* Landing section */}
-      <section className="flex px-32  items-center gap-x-16 justify-between py-8">
-        <div className="w-1/2">
-          <h2 className="text-7xl font-bold">
+      <section className="flex items-start gap-x-16 justify-between  pt-16 py-8 sectionWrapper  flex-col md:flex-row">
+        <div className="md:w-1/2">
+          <h2 className="text-4xl md:text-5xl font-bold">
             “Plan, Share, and Celebrate Your Big Day in One Place”
           </h2>
           <p className="text-lg mt-8">
             “Create unforgettable memories with a personalized wedding platform
             for you and your guests.”
           </p>
-          <div className="flex gap-x-4 mt-12">
+          <div className="flex  flex-col md:flex-row gap-x-4 mt-12 gap-y-4 ">
             <input
               type="email"
               placeholder="Enter your email address"
-              className="rounded-full bg-gray w-1/2 px-6"
+              className="rounded-full bg-gray md:w-3/5 px-6 focus:border-primary h-10"
             />
             <RoundButton
               label="Get started"
@@ -33,7 +33,7 @@ const HomePage = () => {
               onClick={() => console.log("Sign up")}
             />
           </div>
-          <div className="flex items-center space-x-3 mt-10">
+          <div className="flex items-center space-x-3 mt-10 mx-4 md:mx-0">
             {/* Profile images */}
             <div className="flex space-x-0">
               <img
@@ -77,17 +77,18 @@ const HomePage = () => {
             </div>
 
             {/* Text */}
-            <div className="text-black font-medium">+2K People Joined!</div>
+            <div className="text-black font-medium text-sm">+2K People Joined!</div>
           </div>
         </div>
-        <div>
+        <div className="my-4 md:my-0">
           <img
             src={LandingImage}
             alt="Wedding couple"
-            style={{
-              width: "552px",
-              height: "557px",
-            }}
+            // style={{
+            //   width: "552px",
+            //   height: "557px",
+            // }}
+            className="w-screen h-72 md:w-96 md:h-96"
           />
         </div>
       </section>

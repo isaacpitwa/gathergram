@@ -3,7 +3,7 @@ import RoundButton from "./RoundButton";
 
 const AdBanner = () => {
   return (
-    <div className="bg-primary flex items-center justify-center py-4 gap-2">
+    <div className="bg-primary flex items-center justify-center py-4 gap-2 px-4">
       <RoundButton
         label="New"
         customStyles="bg-white px-6 py-1 text-black text-sm"

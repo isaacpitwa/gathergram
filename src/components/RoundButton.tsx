@@ -8,7 +8,7 @@ interface RoundButtonProps {
 
 const RoundButton: React.FC<RoundButtonProps> = ({label, onClick , customStyles}) => {
     return (
-        <button onClick={onClick} className={`rounded-full ${customStyles}`}>
+        <button onClick={onClick} className={`rounded-full ${customStyles} max-h-12 hover:bg-opacity-80 whitespace-nowrap`}>
             {label}
         </button>
     );
