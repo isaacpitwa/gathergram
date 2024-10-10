@@ -7,7 +7,7 @@ const AdBanner = () => {
       <RoundButton
         label="New"
         customStyles="bg-white px-6 py-1 text-black text-sm"
-        onClick={() => console.log("Sign up")}
+        onClick={() => console.log("")}
       />
       <p className="text-white">We are excited to announce Lorem Ipsum.</p>
       <a

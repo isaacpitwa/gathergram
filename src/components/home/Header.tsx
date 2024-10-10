@@ -8,7 +8,7 @@ const Header = () => {
     return (
         <header >
             <AdBanner />
-            <nav className='flex items-center justify-between px-32 py-8'>
+            <nav className='flex items-center justify-between py-4 px-32'>
                 <a href='/'><img src={Logo} alt='Gathergram' /></a>
                 <ul className='flex items-center  gap-x-8'>
                     <li className='text-base'><Link to={`/`} smooth>Home</Link></li>
@@ -20,7 +20,7 @@ const Header = () => {
                 </ul>
                 <div className=' flex items-center gap-x-8'>
                     <button className='text-base hover:text-primary'>Sign in</button>
-                    <RoundButton label='Get started' customStyles='bg-black px-6 py-2' onClick={() => console.log('Sign up')} />
+                    <RoundButton label='Get started' customStyles='bg-black px-6 py-3 font-bold text-white' onClick={() => console.log('Sign up')} />
                 </div>
             </nav>
         </header>
