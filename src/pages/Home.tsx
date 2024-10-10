@@ -1,4 +1,8 @@
 import React from "react";
+import { TiUserAdd } from "react-icons/ti";
+import { MdReviews } from "react-icons/md";
+import { PiUsersFourFill } from "react-icons/pi";
+import { RiTeamFill } from "react-icons/ri";
 import Header from "../components/home/Header";
 import RoundButton from "../components/RoundButton";
 import LandingImage from "../assets/images/landing.png";
@@ -116,7 +120,7 @@ const HomePage = () => {
           <p className="text-white">Easy event management</p>
         </div>
       </section>
-      <section className=" flex flex-col sectionWrapper py-16 items-center">
+      <section className=" flex flex-col sectionWrapper py-16 items-center" id="features">
         <div className="pt-4  text-center pb-16">
           <h3 className="text-xl font-semibold ">Our Features</h3>
           <p className="text-sm mt-2 ">
@@ -125,7 +129,7 @@ const HomePage = () => {
           </p>
         </div>
         <div className="bg-black pt-2 flex flex-col md:flex-row">
-                <div className="pt-20 pb-8 px-6 flex flex-col">
+                <div className="pt-20 pb-8 px-6">
                     <EventsManagementIcon />
                     <h5 className="text-white  font-bold  mt-6">Event Management</h5>
                     <p className="text-white  text-xs mt-2 font-light">Increased conversion and expension on new markets Dynamic business devolopment.</p>
@@ -147,6 +151,37 @@ const HomePage = () => {
                 </div>
 
         </div>
+      </section>
+      <section className="flex flex-col  py-16 items-center bg-black" id="howIdWorks">
+        <div className="pt-4  text-center pb-16">
+            <h3 className="text-xl font-semibold text-white ">How It works</h3>
+            <p className="text-sm mt-2  text-white">
+              "Easily create and manage your wedding events, from the ceremony to
+              <br/>the reception.”
+            </p>
+          </div>
+          <div className=" sectionWrapper pt-6 pb-4 flex flex-col md:flex-row card-container gap-x-4">
+                <div className="rounded-lg bg-light_green  py-8 px-4">
+                    <TiUserAdd className="text-black text-4xl" />
+                    <h5 className="text-black  mt-6">Sign Up</h5>
+                    <p className="text-black  text-xs mt-2 font-light">Create your free account and get started in minutes.</p>
+                </div>
+                <div className="rounded-lg bg-light_pink  py-8 px-4">
+                    <MdReviews className="text-black text-4xl" />
+                    <h5 className="text-black  mt-6">Positive Reviews</h5>
+                    <p className="text-black  text-xs mt-2 font-light">Turpis nasceturvel malesuada enim eget eget.</p>
+                </div>
+                <div className="rounded-lg bg-light_green  py-8 px-4">
+                    <PiUsersFourFill className="text-black text-4xl" />
+                    <h5 className="text-black  mt-6">Regular Users</h5>
+                    <p className="text-black  text-xs mt-2 font-light">Scale your workload without waiting for hte engineering team.</p>
+                </div>
+                <div className="rounded-lg bg-light_green  py-8 px-4">
+                    <RiTeamFill className="text-black text-4xl" />
+                    <h5 className="text-black  mt-6">Team Members</h5>
+                    <p className="text-black  text-xs mt-2 font-light">Turpis nasceturvel malesuada enim eget eget.</p>
+                </div>
+          </div>
       </section>
     </div>
   );
