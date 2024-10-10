@@ -1,46 +1,84 @@
-# Getting Started with Create React App
+# GatherGram Frontend Challenge
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This repository contains the frontend challenge solution for GatherGram. The challenge involves building a fully functional React application based on a Figma design, including landing pages, login, and registration flows, while connecting to external APIs and handling user authentication.
 
-## Available Scripts
+## Table of Contents
 
-In the project directory, you can run:
+- [Features](#features)
+- [Technologies Used](#technologies-used)
+- [Installation](#installation)
+- [Running the App](#running-the-app)
+- [Testing](#testing)
+- [Demo Video](#demo-video)
+- [Hosted Application](#hosted-application)
+- [License](#license)
 
-### `npm start`
+## Features
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+- **Landing Page Implementation**: Responsive landing page built according to Figma specifications.
+- **User Authentication**: Includes login and registration pages, connected to external API for user authentication.
+- **Error Handling**: Robust client-side and server-side error handling for form validation and API requests.
+- **Personalized Experience**: After successful login/registration, users are greeted with a personalized message and redirected to a portal.
+  
+## Technologies Used
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+- **React**: JavaScript library for building the user interface.
+- **Tailwind CSS**: Utility-first CSS framework for styling.
+- **Axios**: For making HTTP requests to external APIs.
+- **React Router**: For handling page navigation.
+- **Jest**: For unit and integration testing.
+- **React Testing Library**: For testing React components.
+- **Vercel**: For hosting the live application.
 
-### `npm test`
+## Installation
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+1. Clone the repository:
 
-### `npm run build`
+```bash
+git clone https://github.com/isaacpitwa/gathergram.git
+cd gathergram
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+2. Install the dependencies:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+```bash
+npm install
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+3. Create a `.env` file in the root directory and add the following environment variables:
 
-### `npm run eject`
+```bash
+REACT_APP_API_BASE_URL=https://jellyfish-app-sjgrf.ondigitalocean.app/
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## Running the App
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+To start the development server, run:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+```bash
+npm start
+```
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+This will run the app in development mode. Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-## Learn More
+## Testing
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+To run the test suite, use the following command:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+```bash
+npm test
+```
+
+The tests include unit and integration tests for various components, ensuring that the landing page, authentication flows, and error handling work correctly.
+
+## Demo Video
+
+A walkthrough of the app is available in the demo video: [Demo Video Link](#)
+
+## Hosted Application
+
+The live version of the application is hosted on Vercel and can be accessed via this link: [GatherGram Live](#)
+
+## License
+
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
