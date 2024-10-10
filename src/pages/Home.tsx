@@ -6,6 +6,9 @@ import Profile1 from "../assets/images/profile1.png";
 import Profile2 from "../assets/images/profile2.png";
 import Profile3 from "../assets/images/profile3.png";
 import Profile4 from "../assets/images/profile4.png";
+import { ReactComponent as ConnectIcon } from '../assets/icons/connect.svg'
+import { ReactComponent as StarIcon } from '../assets/icons/star.svg'
+
 
 const HomePage = () => {
   return (
@@ -40,9 +43,6 @@ const HomePage = () => {
                 src={Profile1}
                 alt="Profile 1"
                 className="w-16 h-16 rounded-full"
-                style={{
-                    marginLeft: '-24px'
-                }}
               />
               <img
                 src={Profile2}
@@ -92,6 +92,22 @@ const HomePage = () => {
           />
         </div>
       </section>
+      <section className="flex items-center sectionWrapper bg-black  py-8 gap-x-4">
+        <h3 className="w-1/2 text-white">"Powerful tool to manage your wedding, engage guests, and celebrate together effortlessly."</h3>
+        <div className="flex md:gap-x-4 gap-x-2">
+            <div className="bg-primary flex items-center justify-center  rounded-full p-4">
+                <ConnectIcon className='text-primary' />
+            </div>
+            <p className="text-white">Connect with your guests</p>
+        </div>
+        <div className="flex md:gap-x-4 gap-x-2">
+            <div className="bg-primary flex items-center justify-center rounded-full  p-6">
+                <StarIcon className='text-primary' />
+            </div>
+            <p className="text-white">Easy event management</p>
+        </div>
+      </section>
+      
     </div>
   );
 };
