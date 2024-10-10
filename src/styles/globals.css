@@ -18,3 +18,8 @@ a {
     background-repeat: no-repeat;
     background-size: cover;
 }
+@media (max-width: 768px) {
+    #howIdWorks .card-container {
+        background-image: none;
+    }
+}

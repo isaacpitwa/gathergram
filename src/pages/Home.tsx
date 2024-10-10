@@ -160,7 +160,7 @@ const HomePage = () => {
               <br/>the reception.”
             </p>
           </div>
-          <div className=" sectionWrapper pt-6 pb-4 flex flex-col md:flex-row card-container gap-x-4">
+          <div className=" sectionWrapper md:pt-6 pb-4 flex flex-col md:flex-row card-container gap-x-4 gap-y-4">
                 <div className="rounded-lg bg-light_green  py-8 px-4">
                     <TiUserAdd className="text-black text-4xl" />
                     <h5 className="text-black  mt-6">Sign Up</h5>
