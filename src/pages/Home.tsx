@@ -18,6 +18,7 @@ import { ReactComponent as DonateContributeIcon } from "../assets/icons/donateAn
 import { ReactComponent as CustomLoveStoryIcon } from "../assets/icons/loveStory.svg";
 import PricingSection from "../components/home/PricingSection";
 import Testimonials from "../components/home/Testimonials";
+import FaqSection from "../components/home/Faq";
 
 const HomePage = () => {
   return (
@@ -187,6 +188,7 @@ const HomePage = () => {
       </section>
       <PricingSection />
       <Testimonials />
+      <FaqSection/>
     </div>
   );
 };
