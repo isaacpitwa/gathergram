@@ -21,6 +21,7 @@ import Testimonials from "../components/home/Testimonials";
 import FaqSection from "../components/home/Faq";
 import SquareImage from '../assets/images/landing.png'
 import { HiOutlineArrowRight } from "react-icons/hi";
+import ContactSection from "../components/home/ContactSection";
 
 const HomePage = () => {
   return (
@@ -191,7 +192,8 @@ const HomePage = () => {
       <PricingSection />
       <Testimonials />
       <FaqSection/>
-      <div className="bg-dark_pink  py-16 px-32 ">
+      {/* Banner Section */}
+      <section className="bg-dark_pink  py-16 px-20 ">
           <div className="bg-black rounded-lg  py-10 px-16 flex gap-x-16 items-center"> 
             <div>
               <h3 className="text-4xl f-monrope text-white">Ready to Plan Your Wedding?</h3>
@@ -205,7 +207,9 @@ const HomePage = () => {
             </div>
             <img  src={SquareImage} className="rounded-lg h-72 w-80" alt="Create Event banner" />
           </div>
-      </div>
+      </section>
+      {/*  Contact us */}
+      <ContactSection/>
     </div>
   );
 };
