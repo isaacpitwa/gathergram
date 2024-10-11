@@ -19,6 +19,8 @@ import { ReactComponent as CustomLoveStoryIcon } from "../assets/icons/loveStory
 import PricingSection from "../components/home/PricingSection";
 import Testimonials from "../components/home/Testimonials";
 import FaqSection from "../components/home/Faq";
+import SquareImage from '../assets/images/landing.png'
+import { HiOutlineArrowRight } from "react-icons/hi";
 
 const HomePage = () => {
   return (
@@ -189,6 +191,21 @@ const HomePage = () => {
       <PricingSection />
       <Testimonials />
       <FaqSection/>
+      <div className="bg-dark_pink sectionWrapper py-16 ">
+          <div className="bg-black rounded-lg  py-10 px-16 flex gap-x-16 items-center"> 
+            <div>
+              <h3 className="text-4xl f-monrope text-white">Ready to Plan Your Wedding?</h3>
+              <p className="text-sm mt-2 text-white  my-8">"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et aliqua. Ut enim ad minim veniam, quis ut aliquip ex ea commodo consequat."</p>
+              <button
+              className=" rounded-full  bg-dark_pink px-6 py-3 font-semibold text-[#000000]  max-h-12 hover:bg-opacity-80 whitespace-nowrap flex items-center gap-x-4"
+              onClick={() => console.log("Sign up")} >
+                <p className="text-sm">Create Your Event for Free</p>
+                <HiOutlineArrowRight className="text-[#000000] text-md" />
+              </button>
+            </div>
+            <img  src={SquareImage} className="rounded-lg h-72 w-80" alt="Create Event banner" />
+          </div>
+      </div>
     </div>
   );
 };
