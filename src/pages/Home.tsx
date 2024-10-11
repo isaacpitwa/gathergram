@@ -102,10 +102,6 @@ const HomePage = () => {
           <img
             src={LandingImage}
             alt="Wedding couple"
-            // style={{
-            //   width: "552px",
-            //   height: "557px",
-            // }}
             className="w-screen h-72 md:w-96 md:h-96"
           />
         </div>
