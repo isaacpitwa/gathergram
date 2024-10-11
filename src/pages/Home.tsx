@@ -17,6 +17,7 @@ import { ReactComponent as GuestInteractionIcon } from "../assets/icons/guestInt
 import { ReactComponent as DonateContributeIcon } from "../assets/icons/donateAndContribute.svg";
 import { ReactComponent as CustomLoveStoryIcon } from "../assets/icons/loveStory.svg";
 import PricingSection from "../components/home/PricingSection";
+import Testimonials from "../components/home/Testimonials";
 
 const HomePage = () => {
   return (
@@ -185,6 +186,7 @@ const HomePage = () => {
           </div>
       </section>
       <PricingSection />
+      <Testimonials />
     </div>
   );
 };
