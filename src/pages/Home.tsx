@@ -16,6 +16,7 @@ import { ReactComponent as EventsManagementIcon } from "../assets/icons/eventMan
 import { ReactComponent as GuestInteractionIcon } from "../assets/icons/guestInteractions.svg";
 import { ReactComponent as DonateContributeIcon } from "../assets/icons/donateAndContribute.svg";
 import { ReactComponent as CustomLoveStoryIcon } from "../assets/icons/loveStory.svg";
+import PricingSection from "../components/home/PricingSection";
 
 const HomePage = () => {
   return (
@@ -183,6 +184,7 @@ const HomePage = () => {
                 </div>
           </div>
       </section>
+      <PricingSection />
     </div>
   );
 };
