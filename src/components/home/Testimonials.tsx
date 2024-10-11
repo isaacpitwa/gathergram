@@ -2,12 +2,6 @@ import React from "react";
 import Carousel from "../Carousel";
 
 const Testimonials = () => {
-  const images = [
-    "https://dummyimage.com/300/00000/ffffff",
-    "https://dummyimage.com/300/00000/000000",
-    "https://dummyimage.com/300/00000/000000",
-    "https://dummyimage.com/300/00000/000000",
-  ];
   return (
     <div className="py-16 items-center  sectionWrapper bg-[#FFF6FC]">
       <div className="flex justify-between w-full items-start">
