@@ -191,7 +191,7 @@ const HomePage = () => {
       <PricingSection />
       <Testimonials />
       <FaqSection/>
-      <div className="bg-dark_pink sectionWrapper py-16 ">
+      <div className="bg-dark_pink  py-16 px-32 ">
           <div className="bg-black rounded-lg  py-10 px-16 flex gap-x-16 items-center"> 
             <div>
               <h3 className="text-4xl f-monrope text-white">Ready to Plan Your Wedding?</h3>
