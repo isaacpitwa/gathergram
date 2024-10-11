@@ -22,6 +22,7 @@ import FaqSection from "../components/home/Faq";
 import SquareImage from '../assets/images/landing.png'
 import { HiOutlineArrowRight } from "react-icons/hi";
 import ContactSection from "../components/home/ContactSection";
+import Footer from "../components/home/Footer";
 
 const HomePage = () => {
   return (
@@ -210,6 +211,8 @@ const HomePage = () => {
       </section>
       {/*  Contact us */}
       <ContactSection/>
+      {/* Footer */}
+      <Footer />
     </div>
   );
 };
