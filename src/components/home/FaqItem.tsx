@@ -22,7 +22,7 @@ const Icons = {
 }
 const FaqItem: React.FC<FaqItemProps> = ({question, answer, icon}) => {
     return (
-        <div className='flex flex-col items-center justify-center w-1/3 my-8  text-center'>
+        <div className='flex flex-col items-center justify-center md:w-1/3 w-full my-8  text-center'>
             <div className='flex items-center justify-center bg-[#FFE3F3] p-4 rounded-full mb-4'>
                 <img src={ Icons[icon] } alt="Heart icon" />
             </div>

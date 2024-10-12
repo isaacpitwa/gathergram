@@ -21,7 +21,7 @@ interface ContactCardProps {
 
 const ContactCard: React.FC<ContactCardProps> = ({ title, description, contact, icon }) => {
     return (
-        <div className='bg-[#FFF6FC]  p-8 w-1/4 rounded-md'>
+        <div className='bg-[#FFF6FC]  p-8 md:w-1/4 w-full rounded-md'>
             <div className='rounded-lg bg-primary p-2  mb-20 w-12 flex items-center justify-center' >
                 <img src={ContactIcons[icon]} alt="Chat icon" className='w-6'/>
             </div>
