@@ -14,8 +14,8 @@ import { ReactComponent as ConnectIcon } from "../assets/icons/connect.svg";
 import { ReactComponent as StarIcon } from "../assets/icons/star.svg";
 import  EventsManagementIcon from "../assets/icons/eventManagement.svg";
 import  GuestInteractionIcon from "../assets/icons/guestInteractions.svg";
-import { ReactComponent as DonateContributeIcon } from "../assets/icons/donateAndContribute.svg";
-import { ReactComponent as CustomLoveStoryIcon } from "../assets/icons/loveStory.svg";
+import DonateContributeIcon from "../assets/icons/donateAndContribute.svg";
+import CustomLoveStoryIcon  from "../assets/icons/loveStory.svg";
 import PricingSection from "../components/home/PricingSection";
 import Testimonials from "../components/home/Testimonials";
 import FaqSection from "../components/home/Faq";
@@ -133,22 +133,26 @@ const HomePage = () => {
         </div>
         <div className="bg-black pt-2 flex flex-col md:flex-row">
                 <div className="pt-20 pb-8 px-6">
-                    <EventsManagementIcon />
+                    {/* <EventsManagementIcon /> */}
+                    <img src={EventsManagementIcon} alt="Icon"/>
                     <h5 className="text-white  font-bold  mt-6">Event Management</h5>
                     <p className="text-white  text-xs mt-2 font-light">Increased conversion and expension on new markets Dynamic business devolopment.</p>
                 </div>
                 <div className="pt-20 pb-8 px-6 bg-light_pink ">
-                    <GuestInteractionIcon />
+                    {/* <GuestInteractionIcon /> */}
+                    <img src={GuestInteractionIcon} alt="Icon"/>
                     <h5 className="text-black  font-bold  mt-6">Guest Interaction</h5>
                     <p className="text-black  text-xs mt-2 font-light">Excute pay outs & refunds straight to your customer`s bank account via Finpay. Increase satisfaction and retention.</p>
                 </div>
                 <div className="pt-20 pb-8 px-6">
-                    <DonateContributeIcon />
+                    {/* <DonateContributeIcon /> */}
+                    <img src={DonateContributeIcon} alt="Icon"/>
                     <h5 className="text-white  font-bold  mt-6">Donate & Contribute</h5>
                     <p className="text-white  text-xs mt-2 font-light">No cards or payment details insertation, no additional registration or app download by your customer`s.</p>
                 </div>
                 <div className="pt-20 pb-8 px-6">
-                    <CustomLoveStoryIcon />
+                    {/* <CustomLoveStoryIcon /> */}
+                    <img src={CustomLoveStoryIcon} alt="Icon"/>
                     <h5 className="text-white  font-bold  mt-6">Custom Love Story Page</h5>
                     <p className="text-white  text-xs mt-2 font-light">Personal informations is encrypted and protected by industry standardbanking security.</p>
                 </div>

@@ -111,7 +111,7 @@ const PricingSection = () => {
         <button className={ tabIndex === 0 ? "px-3 py-2 bg-white text-sm text-[#667085] font-semibold shadow-md rounded-md":''} onClick={()=>{handleTabChange(0)}}>Monthly billing</button>
         <button  className={ tabIndex === 1 ? "px-3 py-2 bg-white text-sm text-[#667085] font-semibold shadow-md rounded-md":''}  onClick={()=>{handleTabChange(1)}} >Annual billing <span className="text-xs bg-[#F2F4F7] p-1 rounded-full text-[#344054] px-2">save 20%</span></button>
       </div>
-      <div className="flex gap-x-8">
+      <div className="flex gap-x-8 flex-col md:flex-row gap-y-8">
       {pricingPlans[tabIndex].map((plan, index) => (
         <PricingPlan
           key={index}

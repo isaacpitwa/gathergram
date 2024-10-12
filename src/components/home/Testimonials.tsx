@@ -4,8 +4,8 @@ import Carousel from "../Carousel";
 const Testimonials = () => {
   return (
     <div className="py-16 items-center  sectionWrapper bg-[#FFF6FC]">
-      <div className="flex justify-between w-full items-start">
-            <div>
+      <div className="flex   md:justify-between w-full  md:items-start items-center flex-col md:flex-row  gap-y-4">
+            <div className="md:text-left text-center">
                 <h3 className="text-xl font-semibold text-black  mb-3">Don’t just take our word for it</h3>
                 <p className="text-[#475467] text-center text-sm">Hear from some of our amazing customers who are building faster.</p>
             </div>
