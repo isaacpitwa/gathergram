@@ -7,7 +7,7 @@ const Footer = () => {
   return (
     <footer className="">
       <div className=" sectionWrapper bg-black py-8">
-        <div className="flex justify-between">
+        <div className="flex justify-between md:flex-row flex-col gap-y-4">
           <div>
             <h3 className="text-white text-xl font-semibold">
               Join our newsletter
@@ -28,7 +28,7 @@ const Footer = () => {
           </div>
         </div>
         <div className="bg-[#475467] h-px w-full my-8"></div>
-        <div className="flex gap-x-16 ">
+        <div className="flex gap-x-16  md:flex-row flex-col md:items-start items-center md:text-left text-center gap-y-8">
             <div className="flex-1">
                 <a href="/"><img src={LogoWhite} alt='Gathergram' /></a>
                 <p className="text-sm text-[#8A8A8A] w-72 my-4 leading-6"> Medfysio provides clear and easy-to-understand health-related information resource or services.</p>
@@ -108,7 +108,7 @@ const Footer = () => {
 
         </div>
       </div>
-      <div className="bg-white flex justify-between sectionWrapper py-4">
+      <div className="bg-white flex justify-between sectionWrapper py-4 md:flex-row flex-col gap-y-4 md:items-start items-center">
         <p className="text-black text-sm">© 2024 GatherGram, We love our users!</p>
         <p className="text-black text-sm">Copyright © 2024 all rights reserved</p>
         <div className="flex gap-x-4">

@@ -194,9 +194,9 @@ const HomePage = () => {
       <Testimonials />
       <FaqSection/>
       {/* Banner Section */}
-      <section className="bg-dark_pink  py-16 px-20 ">
-          <div className="bg-black rounded-lg  py-10 px-16 flex flex-col md:flex-row gap-y-16 gap-x-16 items-center"> 
-            <div>
+      <section className="bg-dark_pink  md:py-16 py-8 md:px-20 px-8 ">
+          <div className="bg-black rounded-lg  py-10 flex flex-col md:flex-row gap-y-16 gap-x-16 items-center"> 
+            <div className="px-16">
               <h3 className="text-4xl f-monrope text-white">Ready to Plan Your Wedding?</h3>
               <p className="text-sm mt-2 text-white  my-8">"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et aliqua. Ut enim ad minim veniam, quis ut aliquip ex ea commodo consequat."</p>
               <button
