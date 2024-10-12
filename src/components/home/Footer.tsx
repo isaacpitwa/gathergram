@@ -7,7 +7,7 @@ const Footer = () => {
   return (
     <footer className="">
       <div className=" sectionWrapper bg-black py-8">
-        <div className="flex justify-between md:flex-row flex-col gap-y-4">
+        <div className="flex justify-between md:flex-row flex-col gap-y-4 md:text-left">
           <div>
             <h3 className="text-white text-xl font-semibold">
               Join our newsletter
@@ -16,13 +16,13 @@ const Footer = () => {
               We’ll send you a nice letter once per week. No spam.
             </p>
           </div>
-          <div className="flex gap-x-4 items-center">
+          <div className="flex gap-x-4 items-center md:flex-row flex-col gap-y-2">
             <input
               type="email"
               placeholder="Enter your email address"
-              className="rounded-sm bg-gray  border  border-[#D0D5DD] px-3 focus:border-primary h-8 text-sm"
+              className="rounded-sm bg-gray  border  border-[#D0D5DD] px-3 focus:border-primary h-8 text-sm md:w-48 w-full"
             />
-            <button className="bg-primary px-4  text-white text-sm py-1 rounded-md h-8">
+            <button className="bg-primary px-4  text-white text-sm py-1 rounded-md h-8 md:w-16 w-full">
             Subscribe
             </button>
           </div>
@@ -32,7 +32,7 @@ const Footer = () => {
             <div className="flex-1">
                 <a href="/"><img src={LogoWhite} alt='Gathergram' /></a>
                 <p className="text-sm text-[#8A8A8A] w-72 my-4 leading-6"> Medfysio provides clear and easy-to-understand health-related information resource or services.</p>
-                <div className="flex gap-x-4 my-4">
+                <div className="flex gap-x-4 my-4 md:justify-start justify-center">
                     <a href="/"> <FaTwitter className="text-white"/></a>
                     <a href="/"> <FaFacebook className="text-white"/></a>
                     <a href="/"> <FaLinkedin className="text-white"/></a>

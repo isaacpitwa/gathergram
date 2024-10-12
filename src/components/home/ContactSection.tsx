@@ -37,7 +37,7 @@ const ContactSection = () => {
         <span className="text-primary text-xs">Contact us</span>
         <h3 className="text-xl font-semibold ">We’d love to hear from you</h3>
         <p className="text-sm  mt-2 text-[#475467]">Our friendly team is always here to chat.</p>
-        <div className='my-16 flex gap-x-8 mf:flex-row flex-col gap-y-8'>
+        <div className='my-16 flex gap-x-8 md:flex-row flex-col  gap-y-8'>
             {
                 contacts.map(contact => <ContactCard 
                 title={contact.title}
