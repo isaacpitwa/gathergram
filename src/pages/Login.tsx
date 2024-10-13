@@ -6,6 +6,14 @@ import { HiOutlineEye, HiOutlineEyeOff } from 'react-icons/hi'
 
 const LoginPage = () => {
     const [showPassword, setShowPassword] =  useState(false)
+
+    const handlePasswordToggle = (e: React.MouseEvent<HTMLButtonElement>) =>{
+        e.preventDefault()
+        setShowPassword(!showPassword)
+    }
+    const onFormSubmit = (e:React.MouseEvent<HTMLFormElement>)=>{
+        e.preventDefault()
+    }
   return (
     <AuthLayout>
       <div className="p-16">
@@ -17,7 +25,7 @@ const LoginPage = () => {
           Enter your email address below to login to existing account or sign up
           with new account.
         </p>
-        <form className=" flex flex-col gap-y-8 pt-8">
+        <form className=" flex flex-col gap-y-8 pt-8" onSubmit={onFormSubmit}>
           <div>
             <label className="text-bold text-sm">Email Address</label>
             <input
@@ -29,13 +37,13 @@ const LoginPage = () => {
           <div className="relative">
             <label className="text-bold text-sm">Password</label>
             <input
-              type="password"
+              type={showPassword ?  "password": 'text'}
               placeholder="Enter Password"
               className="border p-4 rounded-md w-full border-[#32323266] h-14 mt-2"
             />
-            <button onClick={()=>setShowPassword(!showPassword)}>{showPassword ? <HiOutlineEyeOff className="absolute right-4 top-12 text-xl" /> :<HiOutlineEye  className="absolute right-4 top-12 text-xl"/>}</button>
+            <button onClick={ handlePasswordToggle}>{showPassword ? <HiOutlineEyeOff className="absolute right-4 top-12 text-xl text-black" /> :<HiOutlineEye  className="absolute right-4 top-12 text-xl text-black"/>}</button>
           </div>
-          <button className="bg-primary text-white p-2 rounded-md w-full text-bold text-sm h-14">
+          <button className="bg-primary text-white p-2 rounded-md w-full text-bold text-sm h-14" type="submit">
             Get Started
           </button>
         </form>
