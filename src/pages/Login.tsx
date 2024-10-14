@@ -11,7 +11,6 @@ const LoginPage = () => {
   const [showPassword, setShowPassword] = useState(false);
   const [formData, setFormData] = useState({});
   const [emailError, setEmailError] = useState("");
-  const [passwordError, setPasswordError] = useState("");
 
   const handlePasswordToggle = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
@@ -79,9 +78,6 @@ const LoginPage = () => {
               required
               className="border p-4 rounded-md w-full border-[#32323266]  h-12 mt-2"
             />
-            {passwordError && (
-              <p className="text-xs text-red-500">{passwordError}</p>
-            )}
             <button onClick={handlePasswordToggle}>
               {showPassword ? (
                 <HiOutlineEyeOff className="absolute right-4 top-12 text-xl text-black" />
