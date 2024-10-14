@@ -15,12 +15,28 @@ export function validateEmail(email: string): boolean {
  * @returns True if the password is valid, otherwise false.
  */
 export function validatePassword(password: string): boolean {
+    return isMinLength(password) && hasUpperCase(password) && hasLowerCase(password) && hasNumber(password) && hasSpecialChar(password);
+}
+
+export function isMinLength(password: string): boolean {
     const minLength = 8;
-    const hasUpperCase = /[A-Z]/.test(password);
-    const hasLowerCase = /[a-z]/.test(password);
-    const hasNumber = /\d/.test(password);
-    const hasSpecialChar = /[!@#$%^&*(),.?":{}|<>]/.test(password);
-    return password.length >= minLength && hasUpperCase && hasLowerCase && hasNumber && hasSpecialChar;
+    return password.length >= minLength;
+}
+
+export function hasUpperCase(password: string): boolean {
+    return /[A-Z]/.test(password);
+}
+
+export function hasLowerCase(password: string): boolean {
+    return /[a-z]/.test(password);
+}
+
+export function hasNumber(password: string): boolean {
+    return /\d/.test(password);
+}
+
+export function hasSpecialChar(password: string): boolean {
+    return /[!@#$%^&*(),.?":{}|<>]/.test(password);
 }
 /**
  * Validates if the given full name meets the required criteria.

@@ -6,11 +6,17 @@ import { HiOutlineEye, HiOutlineEyeOff } from "react-icons/hi";
 import { Link } from "react-router-dom";
 import { ROUTES } from "../routes";
 import { validateEmail } from "../utils/validators";
+import { useDispatch, useSelector } from "react-redux";
+import { AppDispatch } from "../redux/store";
+import { loginAction } from "../redux/slices/AuthSlice";
 
 const LoginPage = () => {
   const [showPassword, setShowPassword] = useState(false);
-  const [formData, setFormData] = useState({});
+  const [formData, setFormData] = useState({ email:'', password:''});
   const [emailError, setEmailError] = useState("");
+  const dispatch = useDispatch<AppDispatch>();
+  const {loading,error,user} = useSelector((state:any) => state.auth);
+
 
   const handlePasswordToggle = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
@@ -18,7 +24,9 @@ const LoginPage = () => {
   };
   const onFormSubmit = (e: React.MouseEvent<HTMLFormElement>) => {
     e.preventDefault();
-    console.log("form Data: ", formData);
+    if(!emailError) {
+      dispatch(loginAction(formData));
+    }
   };
   const onValueChanged = (e: React.ChangeEvent<HTMLInputElement>) => {
     setFormData({
@@ -45,6 +53,7 @@ const LoginPage = () => {
             <img src={Logo} alt="Gathergram Logo" className="h-14" />
           </Link>
         </div>
+      
         <h1 className="text-2xl font-semibold text-center md:text-left">
           Get Started
         </h1>
@@ -52,10 +61,14 @@ const LoginPage = () => {
           Enter your email address below to login to existing account or sign up
           with new account.
         </p>
+        
         <form
           className=" flex flex-col gap-y-4 md:gap-y-8 pt-8"
           onSubmit={onFormSubmit}
         >
+          {
+          error && <p className="text-red-500 text-center">{error}</p>
+        }
           <div>
             <label className="text-bold text-sm">Email Address</label>
             <input
@@ -91,7 +104,7 @@ const LoginPage = () => {
             type="submit"
             disabled={emailError !=='' || emailError !==''}
           >
-            Get Started
+           { loading ? 'Loading...':'Get Started'}
           </button>
         </form>
         <div className="flex justify-center items-center gap-x-4 my-8">

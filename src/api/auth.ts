@@ -8,8 +8,10 @@ export interface LoginParams {
 export const login = async ({email, password}: LoginParams) =>{
     try {
         const response =  await httpClient.post('/auth/login',{email, password});
+        console.log("response",response)
         return response.data;
     } catch (error) {
+        console.log("error:",error)
         throw error;
     }
 }
@@ -23,9 +25,10 @@ export interface SignUpParams {
 
 export const signUp = async ({fullName, phoneNumber, email, password}: SignUpParams) =>{
     try {
-        const response =  await httpClient.post('/auth/signup',{fullName,phoneNumber,email, password});
+        const response =  await httpClient.post('/auth/register',{fullName,phoneNumber,email, password});
         return response.data;
     } catch (error) {
+        console.log("error:",error)
         throw error;
     }
 }

@@ -8,7 +8,10 @@ import Select from "react-select";
 import SocialButton from "../components/SocialButton";
 import AuthLayout from "../layout/AuthLayout";
 import { ROUTES } from "../routes";
-import { validateEmail, validatePassword } from "../utils/validators";
+import { hasLowerCase, hasNumber, hasSpecialChar, hasUpperCase, isMinLength, validateEmail, validatePassword } from "../utils/validators";
+import { useDispatch, useSelector } from "react-redux";
+import { AppDispatch } from "../redux/store";
+import { signUpAction } from "../redux/slices/AuthSlice";
 const options = [
   { value: "lagos", label: "🇳🇬 Lagos, Nigeria" },
   { value: "sydney", label: "🇦🇺 Sydney, Australia" },
@@ -29,8 +32,13 @@ const SignUpPage = () => {
   const [emailError, setEmailError] = useState("");
   const [fullnameError, setFullnameError] = useState("");
 
-  const [formData, setFormData] = useState({});
-
+  const [formData, setFormData] = useState({
+    email: "",
+    password: "",
+    fullName: "",
+  });
+  const dispatch = useDispatch<AppDispatch>();
+  const {loading,error,user} = useSelector((state:any) => state.auth);
 
   const handlePasswordToggle = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
@@ -39,6 +47,9 @@ const SignUpPage = () => {
   const onFormSubmit = (e: React.MouseEvent<HTMLFormElement>) => {
     e.preventDefault();
     console.log("form Data: ", {...formData,phoneNumber,region});
+    if(!emailError && !passwordError && !fullnameError) {
+     dispatch(signUpAction({ phoneNumber: phoneNumber || "", fullName:formData.fullName,email: formData.email, password: formData.password,}));
+    }
   };
 
   const handleOnChange = (e: React.ChangeEvent<HTMLInputElement>)=>{
@@ -68,7 +79,7 @@ const SignUpPage = () => {
           setFullnameError("Full name must be at most 50 characters");
         } 
         else {
-          setEmailError("");
+          setFullnameError("");
         }
       }
 
@@ -76,9 +87,25 @@ const SignUpPage = () => {
     if (e.target.name === "password") {
         if (e.target.value === "") {
           setPasswordError("Password is required");
-        } else if (!validatePassword(e.target.value)) {
+        } else if (!isMinLength(e.target.value)) {
           setPasswordError("Password must be at least 8 characters");
-        } else {
+        } else if (!hasUpperCase(e.target.value))
+        {
+          setPasswordError("Password must contain at least one uppercase letter");
+        }
+        else if (!hasLowerCase(e.target.value))
+        {
+          setPasswordError("Password must contain at least one lowercase letter");
+        }
+        else if (!hasNumber(e.target.value))
+        {
+          setPasswordError("Password must contain at least one number");
+        }
+        else if (!hasSpecialChar(e.target.value))
+        {
+          setPasswordError("Password must contain at least one special character");
+        }
+        else {
           setPasswordError("");
         }
       }
@@ -129,7 +156,7 @@ const SignUpPage = () => {
             <label className="text-bold text-sm">Full Name</label>
             <input
               type="text"
-              name="fullname"
+              name="fullName"
               placeholder="Enter  your full name"
               className="border p-4 rounded-md w-full border-[#32323266] h-12 mt-2"
               required
@@ -203,8 +230,9 @@ const SignUpPage = () => {
           <button
             className="bg-primary text-white p-2 rounded-md w-full text-bold text-sm h-14"
             type="submit"
+            disabled={loading || emailError !=='' || passwordError !=='' || fullnameError !==''}
           >
-            Sign up
+            { loading ?'Loading':'Sign up'}
           </button>
         </form>
         <div className="flex justify-center items-center gap-x-4 my-8">

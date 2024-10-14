@@ -1,7 +1,7 @@
 import { createSlice, createAsyncThunk, PayloadAction } from '@reduxjs/toolkit';
 import { login, LoginParams,signUp,SignUpParams } from '../../api/auth';
 
-export const loginAction = createAsyncThunk('auth/login', async ({email, password}:LoginParams) => {
+export const loginAction = createAsyncThunk('auth/login', async ({email, password}: LoginParams) => {
         const response = await login({email, password});
         return response;
 });
