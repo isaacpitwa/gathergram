@@ -1,11 +1,24 @@
 import React, { useState } from "react";
 import AuthLayout from "../layout/AuthLayout";
-import Logo from "../assets/images/logo2.png";
 import SocialButton from "../components/SocialButton";
 import { HiOutlineEye, HiOutlineEyeOff } from "react-icons/hi";
+import ReactCountryFlag from "react-country-flag";
+import "react-phone-number-input/style.css";
+import PhoneInput from "react-phone-number-input";
+import { E164Number } from "libphonenumber-js/types.cjs";
+import Select from "react-select";
+const options = [
+  { value: "lagos", label: "🇳🇬 Lagos, Nigeria" },
+  { value: "sydney", label: "🇦🇺 Sydney, Australia" },
+  { value: "newyork", label: "🇺🇸 New York, USA" },
+  // Add more options as needed
+];
 
 const SignUpPage = () => {
   const [showPassword, setShowPassword] = useState(false);
+  const [phoneNumber, setPhoneNumber] = useState<E164Number | undefined>(
+    undefined
+  );
 
   const handlePasswordToggle = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
@@ -14,9 +27,31 @@ const SignUpPage = () => {
   const onFormSubmit = (e: React.MouseEvent<HTMLFormElement>) => {
     e.preventDefault();
   };
+  const customStyles = {
+    control: (provided: any) => ({
+      ...provided,
+      height: '56px',
+      border: '1px solid #32323266',
+      borderRadius: '8px',
+      padding: '0 16px',
+    }),
+    option: (provided: any) => ({
+      ...provided,
+      display: 'flex',
+      alignItems: 'center',
+    }),
+  };
   return (
     <AuthLayout>
       <div className="p-16">
+        <div className="p-8 bg-[#F5169C0D] rounded-lg mb-4 border">
+            <h2 className="text-primary text-xl font-bold">Welcome! Please tell us a bit about yourself</h2>
+            <input type="radio" id="javascript" name="userType" value="JavaScript" className="w-4 h-4 text-primary accent-primary"/>
+            <label className="ml-2">I am event organizer</label>
+            <br/>
+            <input type="radio" id="javascript" name="userType" value="JavaScript" className="w-4 h-4 text-primary accent-primary"/>
+            <label  className="ml-2">I am Bride/Groom</label>
+        </div>
         <h1 className="text-2xl font-semibold">Signup</h1>
         <p className="text-sm w-2/3 text-black">
           Enter your details below to signup or sign in with existing account.
@@ -35,6 +70,24 @@ const SignUpPage = () => {
             <input
               type="text"
               placeholder="Enter  your full name"
+              className="border p-4 rounded-md w-full border-[#32323266] h-14 mt-2"
+            />
+          </div>
+
+          <div>
+            <label className="text-bold text-sm mt-2">Region</label>
+            <Select
+              options={options}
+              styles={customStyles}
+              placeholder="Select Region"
+            />
+          </div>
+          <div>
+            <label className="text-bold text-sm">Phone Number</label>
+            <PhoneInput
+              placeholder="Enter phone number"
+              value={phoneNumber}
+              onChange={(text) => setPhoneNumber(text)}
               className="border p-4 rounded-md w-full border-[#32323266] h-14 mt-2"
             />
           </div>
