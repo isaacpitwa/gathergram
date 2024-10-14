@@ -20,7 +20,7 @@ const LoginPage = () => {
     <AuthLayout>
       <div className=" p-4 md:p-16 mb-2">
         <div className="flex justify-center pb-24">
-          <img src={Logo} alt="Gathergram Logo" className="h-14" />
+          <Link to={ROUTES.HOME}><img src={Logo} alt="Gathergram Logo" className="h-14" /></Link>
         </div>
         <h1 className="text-2xl font-semibold text-center md:text-left">Get Started</h1>
         <p className="text-sm md:w-2/3  text-black text-center md:text-left">

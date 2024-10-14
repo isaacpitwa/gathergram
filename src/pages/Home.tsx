@@ -26,7 +26,7 @@ import Footer from "../components/home/Footer";
 
 const HomePage = () => {
   return (
-    <div>
+    <div >
       <Header />
       {/* Landing section */}
       <section className="flex items-start gap-x-16 justify-between  pt-16 py-8 sectionWrapper  flex-col md:flex-row">
@@ -194,9 +194,9 @@ const HomePage = () => {
       <Testimonials />
       <FaqSection/>
       {/* Banner Section */}
-      <section className="bg-dark_pink  md:py-16 py-8 md:px-20 px-8 ">
+      <section className="bg-dark_pink  md:py-16 py-8 md:px-20 px-4 ">
           <div className="bg-black rounded-lg  py-10 flex flex-col md:flex-row gap-y-16 gap-x-16 items-center md:px-4 px-4"> 
-            <div className="px-16">
+            <div className="">
               <h3 className="text-4xl f-monrope text-white">Ready to Plan Your Wedding?</h3>
               <p className="text-sm mt-2 text-white  my-8">"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et aliqua. Ut enim ad minim veniam, quis ut aliquip ex ea commodo consequat."</p>
               <button

@@ -1,19 +1,21 @@
-import React, { useState } from "react";
-import AuthLayout from "../layout/AuthLayout";
-import SocialButton from "../components/SocialButton";
-import { HiOutlineEye, HiOutlineEyeOff } from "react-icons/hi";
-import ReactCountryFlag from "react-country-flag";
-import "react-phone-number-input/style.css";
-import PhoneInput from "react-phone-number-input";
 import { E164Number } from "libphonenumber-js/types.cjs";
-import Select from "react-select";
+import React, { useState } from "react";
+import { HiOutlineEye, HiOutlineEyeOff } from "react-icons/hi";
+import PhoneInput from "react-phone-number-input";
+import "react-phone-number-input/style.css";
 import { Link } from "react-router-dom";
+import Select from "react-select";
+import SocialButton from "../components/SocialButton";
+import AuthLayout from "../layout/AuthLayout";
 import { ROUTES } from "../routes";
 const options = [
   { value: "lagos", label: "🇳🇬 Lagos, Nigeria" },
   { value: "sydney", label: "🇦🇺 Sydney, Australia" },
   { value: "newyork", label: "🇺🇸 New York, USA" },
-  // Add more options as needed
+  { value: "capetown", label: "🇿🇦 Cape Town, South Africa" },
+  { value: "london", label: "🇬🇧 London, UK" },
+  
+
 ];
 
 const SignUpPage = () => {
