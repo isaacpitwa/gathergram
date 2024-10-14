@@ -18,12 +18,12 @@ const LoginPage = () => {
     }
   return (
     <AuthLayout>
-      <div className="p-16">
+      <div className=" p-4 md:p-16 mb-2">
         <div className="flex justify-center pb-24">
           <img src={Logo} alt="Gathergram Logo" className="h-14" />
         </div>
-        <h1 className="text-2xl font-semibold">Get Started</h1>
-        <p className="text-sm w-2/3 text-black">
+        <h1 className="text-2xl font-semibold text-center md:text-left">Get Started</h1>
+        <p className="text-sm md:w-2/3  text-black text-center md:text-left">
           Enter your email address below to login to existing account or sign up
           with new account.
         </p>
@@ -33,7 +33,7 @@ const LoginPage = () => {
             <input
               type="text"
               placeholder="Enter email"
-              className="border p-4 rounded-md w-full border-[#32323266] h-14 mt-2"
+              className="border p-4 rounded-md w-full border-[#32323266] h-12 mt-2"
             />
           </div>
           <div className="relative">
@@ -41,7 +41,7 @@ const LoginPage = () => {
             <input
               type={showPassword ?  "password": 'text'}
               placeholder="Enter Password"
-              className="border p-4 rounded-md w-full border-[#32323266] h-14 mt-2"
+              className="border p-4 rounded-md w-full border-[#32323266]  h-12 mt-2"
             />
             <button onClick={ handlePasswordToggle}>{showPassword ? <HiOutlineEyeOff className="absolute right-4 top-12 text-xl text-black" /> :<HiOutlineEye  className="absolute right-4 top-12 text-xl text-black"/>}</button>
           </div>
@@ -55,7 +55,7 @@ const LoginPage = () => {
             <div className="w-14 h-px bg-[#A0A0A0]"></div>
         </div>
 
-        <div className="flex gap-x-4 justify-center  flex-col md:flex-row">
+        <div className="flex gap-x-4 justify-center flex-col md:flex-row gap-y-4">
             <SocialButton label='Google' icon='google' onClick={()=> console.log("Google Login")} />
             <SocialButton label='Facebook' icon='facebook' onClick={()=> console.log("Google Facebook")} />
             <SocialButton label='Apple' icon='apple' onClick={()=> console.log("Google Apple")} />
