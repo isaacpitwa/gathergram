@@ -53,7 +53,7 @@ const LoginPage = () => {
             <div className="w-14 h-px bg-[#A0A0A0]"></div>
         </div>
 
-        <div className="flex gap-x-4 justify-center">
+        <div className="flex gap-x-4 justify-center  flex-col md:flex-row">
             <SocialButton label='Google' icon='google' onClick={()=> console.log("Google Login")} />
             <SocialButton label='Facebook' icon='facebook' onClick={()=> console.log("Google Facebook")} />
             <SocialButton label='Apple' icon='apple' onClick={()=> console.log("Google Apple")} />

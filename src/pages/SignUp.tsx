@@ -43,7 +43,7 @@ const SignUpPage = () => {
   };
   return (
     <AuthLayout>
-      <div className="p-16">
+      <div className=" p-4 md:p-16">
         <div className="p-8 bg-[#F5169C0D] rounded-lg mb-4 border">
             <h2 className="text-primary text-xl font-bold">Welcome! Please tell us a bit about yourself</h2>
             <input type="radio" id="javascript" name="userType" value="JavaScript" className="w-4 h-4 text-primary accent-primary"/>
@@ -140,7 +140,7 @@ const SignUpPage = () => {
           <div className="w-14 h-px bg-[#A0A0A0]"></div>
         </div>
 
-        <div className="flex gap-x-4 justify-center">
+        <div className="flex gap-x-4 justify-center flex-col md:flex-row gap-y-4">
           <SocialButton
             label="Google"
             icon="google"
