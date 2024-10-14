@@ -47,24 +47,24 @@ const SignUpPage = () => {
     <AuthLayout>
       <div className=" p-4 md:p-16 mb-2">
         <div className="p-8 bg-[#F5169C0D] rounded-lg mb-4 border">
-            <h2 className="text-primary text-xl font-bold">Welcome! Please tell us a bit about yourself</h2>
+            <h2 className="text-primary text-xl font-bold mb-2">Welcome! Please tell us a bit about yourself</h2>
             <input type="radio" name="userType" value="organizer" className="w-4 h-4 text-primary accent-primary"/>
             <label className="ml-2">I am event organizer</label>
             <br/>
             <input type="radio"  name="userType" value="bride" className="w-4 h-4 text-primary accent-primary"/>
             <label  className="ml-2">I am Bride/Groom</label>
         </div>
-        <h1 className="text-2xl font-semibold">Signup</h1>
-        <p className="text-sm w-2/3 text-black">
+        <h1 className="text-2xl font-semibold text-center md:text-left">Signup</h1>
+        <p className="text-sm  md:w-2/3 text-black text-center md:text-left">
           Enter your details below to signup or sign in with existing account.
         </p>
-        <form className=" flex flex-col gap-y-8 pt-8" onSubmit={onFormSubmit}>
+        <form className=" flex flex-col gap-y-4 md:gap-y-8 pt-8" onSubmit={onFormSubmit}>
           <div>
             <label className="text-bold text-sm">Email Address</label>
             <input
               type="email"
               placeholder="Enter email"
-              className="border p-4 rounded-md w-full border-[#32323266] h-14 mt-2"
+              className="border p-4 rounded-md w-full border-[#32323266] h-12 mt-2"
             />
           </div>
           <div>
@@ -72,7 +72,7 @@ const SignUpPage = () => {
             <input
               type="text"
               placeholder="Enter  your full name"
-              className="border p-4 rounded-md w-full border-[#32323266] h-14 mt-2"
+              className="border p-4 rounded-md w-full border-[#32323266] h-12 mt-2"
             />
           </div>
 
@@ -90,7 +90,7 @@ const SignUpPage = () => {
               placeholder="Enter phone number"
               value={phoneNumber}
               onChange={(text) => setPhoneNumber(text)}
-              className="border p-4 rounded-md w-full border-[#32323266] h-14 mt-2"
+              className="border p-4 rounded-md w-full border-[#32323266] h-12 mt-2"
             />
           </div>
           <div className="relative">
@@ -99,13 +99,13 @@ const SignUpPage = () => {
             <input
               type={showPassword ? "password" : "text"}
               placeholder="Enter Password"
-              className="border p-4 rounded-md w-full border-[#32323266] h-14 mt-2"
+              className="border p-4 rounded-md w-full border-[#32323266] h-12 mt-2"
             />
             <button onClick={handlePasswordToggle}>
               {showPassword ? (
-                <HiOutlineEyeOff className="absolute right-4 top-12 text-xl text-black" />
+                <HiOutlineEyeOff className="absolute right-4 top-16 text-xl text-black" />
               ) : (
-                <HiOutlineEye className="absolute right-4 top-12 text-xl text-black" />
+                <HiOutlineEye className="absolute right-4 top-16 text-xl text-black" />
               )}
             </button>
           </div>

@@ -27,7 +27,7 @@ const LoginPage = () => {
           Enter your email address below to login to existing account or sign up
           with new account.
         </p>
-        <form className=" flex flex-col gap-y-8 pt-8" onSubmit={onFormSubmit}>
+        <form className=" flex flex-col gap-y-4 md:gap-y-8 pt-8" onSubmit={onFormSubmit}>
           <div>
             <label className="text-bold text-sm">Email Address</label>
             <input
