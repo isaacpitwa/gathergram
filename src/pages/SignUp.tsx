@@ -7,6 +7,8 @@ import "react-phone-number-input/style.css";
 import PhoneInput from "react-phone-number-input";
 import { E164Number } from "libphonenumber-js/types.cjs";
 import Select from "react-select";
+import { Link } from "react-router-dom";
+import { ROUTES } from "../routes";
 const options = [
   { value: "lagos", label: "🇳🇬 Lagos, Nigeria" },
   { value: "sydney", label: "🇦🇺 Sydney, Australia" },
@@ -160,9 +162,9 @@ const SignUpPage = () => {
         <p className="text-center mt-4 text-sm text-black">
           Don’t have an account?{" "}
           <span>
-            <a href="/" className="text-[#7E0C65]">
+            <Link to={ROUTES.LOGIN} className="text-[#7E0C65]">
               Sign in
-            </a>
+            </Link>
           </span>
         </p>
       </div>

@@ -3,6 +3,8 @@ import AuthLayout from "../layout/AuthLayout";
 import Logo from "../assets/images/logo2.png";
 import SocialButton from "../components/SocialButton";
 import { HiOutlineEye, HiOutlineEyeOff } from 'react-icons/hi'
+import { Link } from "react-router-dom";
+import { ROUTES } from "../routes";
 
 const LoginPage = () => {
     const [showPassword, setShowPassword] =  useState(false)
@@ -58,7 +60,7 @@ const LoginPage = () => {
             <SocialButton label='Facebook' icon='facebook' onClick={()=> console.log("Google Facebook")} />
             <SocialButton label='Apple' icon='apple' onClick={()=> console.log("Google Apple")} />
         </div>
-        <p className="text-center mt-4 text-sm text-black">Don’t have an account? <span><a href="/" className="text-[#7E0C65]">Sign up</a></span></p>
+        <p className="text-center mt-4 text-sm text-black">Don’t have an account? <span><Link to={ROUTES.SIGNUP} className="text-[#7E0C65]">Sign up</Link></span></p>
       </div>
     </AuthLayout>
   );
