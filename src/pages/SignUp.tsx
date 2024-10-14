@@ -43,13 +43,13 @@ const SignUpPage = () => {
   };
   return (
     <AuthLayout>
-      <div className=" p-4 md:p-16">
+      <div className=" p-4 md:p-16 mb-2">
         <div className="p-8 bg-[#F5169C0D] rounded-lg mb-4 border">
             <h2 className="text-primary text-xl font-bold">Welcome! Please tell us a bit about yourself</h2>
-            <input type="radio" id="javascript" name="userType" value="JavaScript" className="w-4 h-4 text-primary accent-primary"/>
+            <input type="radio" name="userType" value="organizer" className="w-4 h-4 text-primary accent-primary"/>
             <label className="ml-2">I am event organizer</label>
             <br/>
-            <input type="radio" id="javascript" name="userType" value="JavaScript" className="w-4 h-4 text-primary accent-primary"/>
+            <input type="radio"  name="userType" value="bride" className="w-4 h-4 text-primary accent-primary"/>
             <label  className="ml-2">I am Bride/Groom</label>
         </div>
         <h1 className="text-2xl font-semibold">Signup</h1>
