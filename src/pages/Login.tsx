@@ -5,7 +5,7 @@ import SocialButton from "../components/SocialButton";
 import { HiOutlineEye, HiOutlineEyeOff } from "react-icons/hi";
 import { Link } from "react-router-dom";
 import { ROUTES } from "../routes";
-import { validateEmail, validatePassword } from "../utils/validators";
+import { validateEmail } from "../utils/validators";
 
 const LoginPage = () => {
   const [showPassword, setShowPassword] = useState(false);
