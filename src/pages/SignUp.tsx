@@ -8,13 +8,14 @@ import Select from "react-select";
 import SocialButton from "../components/SocialButton";
 import AuthLayout from "../layout/AuthLayout";
 import { ROUTES } from "../routes";
+import { validateEmail, validatePassword } from "../utils/validators";
 const options = [
   { value: "lagos", label: "🇳🇬 Lagos, Nigeria" },
   { value: "sydney", label: "🇦🇺 Sydney, Australia" },
   { value: "newyork", label: "🇺🇸 New York, USA" },
   { value: "capetown", label: "🇿🇦 Cape Town, South Africa" },
   { value: "london", label: "🇬🇧 London, UK" },
-  
+
 
 ];
 
@@ -23,6 +24,13 @@ const SignUpPage = () => {
   const [phoneNumber, setPhoneNumber] = useState<E164Number | undefined>(
     undefined
   );
+  const[region,setRegion] = useState("")
+  const [passwordError, setPasswordError] = useState("");
+  const [emailError, setEmailError] = useState("");
+  const [fullnameError, setFullnameError] = useState("");
+
+  const [formData, setFormData] = useState({});
+
 
   const handlePasswordToggle = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
@@ -30,7 +38,51 @@ const SignUpPage = () => {
   };
   const onFormSubmit = (e: React.MouseEvent<HTMLFormElement>) => {
     e.preventDefault();
+    console.log("form Data: ", {...formData,phoneNumber,region});
   };
+
+  const handleOnChange = (e: React.ChangeEvent<HTMLInputElement>)=>{
+    setFormData({
+        ...formData,
+        [e.target.name]: e.target.value,
+      });
+
+       // Validate email
+    if (e.target.name === "email") {
+        if (e.target.value === "") {
+          setEmailError("Email is required");
+        } else if (!validateEmail(e.target.value)) {
+          setEmailError("Please enter a valid email");
+        } else {
+          setEmailError("");
+        }
+      }
+
+      // Validate full name
+    if (e.target.name === "fullname") {
+        if (e.target.value === "") {
+          setFullnameError("Full name is required");
+        } else if (e.target.value.length < 4) {
+          setFullnameError("Full name must be at least 4 characters");
+        } else if(e.target.value.length > 50){
+          setFullnameError("Full name must be at most 50 characters");
+        } 
+        else {
+          setEmailError("");
+        }
+      }
+
+     // Validate password
+    if (e.target.name === "password") {
+        if (e.target.value === "") {
+          setPasswordError("Password is required");
+        } else if (!validatePassword(e.target.value)) {
+          setPasswordError("Password must be at least 8 characters");
+        } else {
+          setPasswordError("");
+        }
+      }
+  }
   const customStyles = {
     control: (provided: any) => ({
       ...provided,
@@ -50,13 +102,13 @@ const SignUpPage = () => {
       <div className=" p-4 md:p-16 mb-2">
         <div className="p-8 bg-[#F5169C0D] rounded-lg mb-4 border">
             <h2 className="text-primary text-xl font-bold mb-2">Welcome! Please tell us a bit about yourself</h2>
-            <input type="radio" name="userType" value="organizer" className="w-4 h-4 text-primary accent-primary"/>
+            <input type="radio" name="userType" value="organizer" className="w-4 h-4 text-primary accent-primary" checked onChange={handleOnChange}/>
             <label className="ml-2">I am event organizer</label>
             <br/>
-            <input type="radio"  name="userType" value="bride" className="w-4 h-4 text-primary accent-primary"/>
+            <input type="radio"  name="userType" value="bride" className="w-4 h-4 text-primary accent-primary" onChange={handleOnChange} />
             <label  className="ml-2">I am Bride/Groom</label>
         </div>
-        <h1 className="text-2xl font-semibold text-center md:text-left">Signup</h1>
+        <h1 className="text-2xl font-semibold text-center md:text-left" >Signup</h1>
         <p className="text-sm  md:w-2/3 text-black text-center md:text-left">
           Enter your details below to signup or sign in with existing account.
         </p>
@@ -66,16 +118,24 @@ const SignUpPage = () => {
             <input
               type="email"
               placeholder="Enter email"
+              name="email"
+              required
               className="border p-4 rounded-md w-full border-[#32323266] h-12 mt-2"
+              onChange={handleOnChange}
             />
+            {emailError && <p className="text-xs text-red-500">{emailError}</p>}
           </div>
           <div>
             <label className="text-bold text-sm">Full Name</label>
             <input
               type="text"
+              name="fullname"
               placeholder="Enter  your full name"
               className="border p-4 rounded-md w-full border-[#32323266] h-12 mt-2"
+              required
+              onChange={handleOnChange}
             />
+            {fullnameError && <p className="text-xs text-red-500">{fullnameError}</p>}
           </div>
 
           <div>
@@ -84,6 +144,8 @@ const SignUpPage = () => {
               options={options}
               styles={customStyles}
               placeholder="Select Region"
+              required
+              onChange={(selectedOption) => selectedOption ? setRegion(selectedOption.value) : null }
             />
           </div>
           <div>
@@ -93,15 +155,19 @@ const SignUpPage = () => {
               value={phoneNumber}
               onChange={(text) => setPhoneNumber(text)}
               className="border p-4 rounded-md w-full border-[#32323266] h-12 mt-2"
+              required
             />
           </div>
           <div className="relative">
             <label className="text-bold text-sm">Password</label>
             <p className="text-xs text-black">Must be at least 6 characters</p>
             <input
-              type={showPassword ? "password" : "text"}
+              type={showPassword ?"text" : "password" }
               placeholder="Enter Password"
+              name="password"
               className="border p-4 rounded-md w-full border-[#32323266] h-12 mt-2"
+              required
+              onChange={handleOnChange}
             />
             <button onClick={handlePasswordToggle}>
               {showPassword ? (
@@ -110,6 +176,9 @@ const SignUpPage = () => {
                 <HiOutlineEye className="absolute right-4 top-16 text-xl text-black" />
               )}
             </button>
+            {passwordError && (
+              <p className="text-xs text-red-500">{passwordError}</p>
+            )}
           </div>
           <p className="text-sm text-black">
             By signing up, I agree to the{" "}

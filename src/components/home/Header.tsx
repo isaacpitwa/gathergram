@@ -5,12 +5,20 @@ import { HashLink as Link} from 'react-router-hash-link'
 import { MdMenu,MdClose } from "react-icons/md";
 
 import AdBanner from '../AdBanner';
+import { useNavigate } from 'react-router-dom';
+import { ROUTES } from '../../routes';
 
 const Header = () => {
     const [isMenuOpen,setIsMenuOpen] = useState(false)
-
+    const navigate = useNavigate();
     const toggleMenu = () => {
         setIsMenuOpen(!isMenuOpen)
+    }
+   const  onSignInClicked = () =>{
+        navigate(ROUTES.LOGIN)
+    }
+    const onGetStartedClicked = () =>{
+        navigate(ROUTES.SIGNUP)
     }
     return (
         <header >
@@ -26,8 +34,8 @@ const Header = () => {
                     <li className='text-base'><Link to={`#contact`} smooth>Contact</Link></li>
                 </ul>
                 <div className='hidden md:flex items-center gap-x-4  md:gap-x-8 pl-4'>
-                    <button className='text-base hover:text-primary whitespace-nowrap'>Sign in</button>
-                    <RoundButton label='Get started' customStyles='bg-black px-6 py-3 font-bold text-white' onClick={() => console.log('Sign up')} />
+                    <button className='text-base hover:text-primary whitespace-nowrap' onClick={onSignInClicked}>Sign in</button>
+                    <RoundButton label='Get started' customStyles='bg-black px-6 py-3 font-bold text-white' onClick={onGetStartedClicked} />
                 </div>
                 <button   className='block md:hidden'onClick={toggleMenu}><MdMenu className='text-3xl text-black' /></button> 
             </nav>
@@ -42,8 +50,8 @@ const Header = () => {
                         <li className='text-base'><Link to={`#contact`} smooth>Contact</Link></li>
                     </ul>
                     <div className=' flex items-center  flex-col gap-y-4 pt-4 '>
-                    <button className='text-base hover:text-primary whitespace-nowrap'>Sign in</button>
-                    <RoundButton label='Get started' customStyles='bg-black px-6 py-3 font-bold text-white' onClick={() => console.log('Sign up')} />
+                    <button className='text-base hover:text-primary whitespace-nowrap' onClick={onSignInClicked}>Sign in</button>
+                    <RoundButton label='Get started' customStyles='bg-black px-6 py-3 font-bold text-white' onClick={onGetStartedClicked} />
                     </div>
                 </div>}
         </header>
