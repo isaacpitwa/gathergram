@@ -83,9 +83,11 @@ const HomePage = () => {
                 }}
               />
               <div
-                className="flex items-center justify-center w-16 h-16 bg-blue-200 text-black rounded-full "
+                className="flex items-center justify-center bg-blue-200 text-black rounded-full "
                 style={{
                   marginLeft: "-24px",
+                  height:"48px",
+                  width:"48px"
                 }}
               >
                 +2k
