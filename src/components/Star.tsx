@@ -6,6 +6,15 @@ interface StarRatingProps {
     rating: number;
 }
 
+/**
+ * StarRating component renders a star rating based on the provided rating value.
+ *
+ * @param {StarRatingProps} props - The properties object.
+ * @param {number} props.rating - The rating value to determine the number of highlighted stars.
+ *
+ * @returns {JSX.Element} A JSX element containing a row of star icons, with the number of highlighted stars
+ *                        corresponding to the rating value.
+ */
 const StarRating: React.FC<StarRatingProps> = ({rating}) => {
     return (
         <div className='flex gap-x-1 my-2'>

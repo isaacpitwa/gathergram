@@ -1,6 +1,20 @@
 import React, {useState} from "react";
 import PricingPlan from "./PricingPlan";
 
+/**
+ * An array of pricing plans for different subscription periods.
+ * Each plan includes details such as label, price, description, features, and period.
+ * 
+ * @constant
+ * @type {Array<Array<Object>>}
+ * @property {string} label - The name of the pricing plan.
+ * @property {number} price - The cost of the pricing plan.
+ * @property {string} description - A brief description of the pricing plan.
+ * @property {string} features_label - A label describing the features included in the plan.
+ * @property {Array<string>} features - A list of features included in the pricing plan.
+ * @property {string} period - The subscription period for the pricing plan (e.g., "month", "year").
+ * @property {boolean} isPopular - Indicates whether the pricing plan is the most popular option.
+ */
 const pricingPlans = [[
         {
           label: "Basic",
@@ -94,7 +108,7 @@ const PricingSection = () => {
     }
   return (
     <section
-      className="flex flex-col  py-16 items-center  sectionWrapper"
+      className="flex flex-col  py-16 p items-center  sectionWrapper"
       id="Pricing"
     >
       <div className="pt-4  text-center pb-16">
@@ -111,7 +125,7 @@ const PricingSection = () => {
         <button className={ tabIndex === 0 ? "px-3 py-2 bg-white text-sm text-[#667085] font-semibold shadow-md rounded-md":''} onClick={()=>{handleTabChange(0)}}>Monthly billing</button>
         <button  className={ tabIndex === 1 ? "px-3 py-2 bg-white text-sm text-[#667085] font-semibold shadow-md rounded-md":''}  onClick={()=>{handleTabChange(1)}} >Annual billing <span className="text-xs bg-[#F2F4F7] p-1 rounded-full text-[#344054] px-2">save 20%</span></button>
       </div>
-      <div className="flex gap-x-8">
+      <div className="flex gap-x-8 flex-col md:flex-row gap-y-8 ">
       {pricingPlans[tabIndex].map((plan, index) => (
         <PricingPlan
           key={index}

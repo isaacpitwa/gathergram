@@ -11,6 +11,32 @@ interface PricingPlanProps {
   isPopular: boolean | undefined;
 }
 
+/**
+ * PricingPlan component displays a pricing plan with its details.
+ *
+ * @component
+ * @param {PricingPlanProps} props - The properties for the PricingPlan component.
+ * @param {string} props.label - The label of the pricing plan.
+ * @param {number} props.price - The price of the pricing plan.
+ * @param {string} props.description - The description of the pricing plan.
+ * @param {string} props.features_label - The label for the features section.
+ * @param {string[]} props.features - The list of features included in the pricing plan.
+ * @param {string} props.period - The period for which the price is applicable (e.g., per month).
+ * @param {boolean} props.isPopular - Indicates if the pricing plan is popular.
+ *
+ * @returns {JSX.Element} The rendered PricingPlan component.
+ *
+ * @example
+ * <PricingPlan
+ *   label="Pro"
+ *   price={29}
+ *   description="Best for professionals"
+ *   features_label="Includes:"
+ *   features={["Feature 1", "Feature 2", "Feature 3"]}
+ *   period="month"
+ *   isPopular={true}
+ * />
+ */
 const PricingPlan: React.FC<PricingPlanProps> = ({
   label,
   price,

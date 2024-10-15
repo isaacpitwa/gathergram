@@ -51,3 +51,8 @@ a {
     background-size: cover;
     background-position: center;
 }
+.auth {
+    background-image: url('../assets/images/auth_bg.jpeg');
+    background-size: cover;
+    background-position: center;
+}
