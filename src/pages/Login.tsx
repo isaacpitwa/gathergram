@@ -165,17 +165,17 @@ const LoginPage = () => {
           <SocialButton
             label="Google"
             icon="google"
-            onClick={() => console.log("Google Login")}
+            onClick={() =>  alert("This Feature  is still under devlopment")}
           />
           <SocialButton
             label="Facebook"
             icon="facebook"
-            onClick={() => console.log("Google Facebook")}
+            onClick={() =>  alert("This Feature  is still under devlopment")}
           />
           <SocialButton
             label="Apple"
             icon="apple"
-            onClick={() => console.log("Google Apple")}
+            onClick={() =>  alert("This Feature  is still under devlopment")}
           />
         </div>
         <p className="text-center mt-4 text-sm text-black">

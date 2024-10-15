@@ -20,11 +20,9 @@ export interface LoginParams {
 export const login = async ({email, password}: LoginParams) =>{
     try {
         const response =  await httpClient.post('/auth/login',{email, password});
-        console.log("response",response)
         return response.data.data;
     } catch (error:any) {
         if( error.response && error.response.data){
-            console.log("error:",error.response.data)
             if(error.response.status === 400){
                 throw new Error('Bad Request. Please check your input.');
             }
@@ -66,11 +64,9 @@ export const signUp = async ({fullName, phoneNumber, email, password}: SignUpPar
             phoneNumber = phoneNumber.slice(1);
         }
         const response =  await httpClient.post('/auth/register',{fullName,phoneNumber,email, password});
-        console.log("Register Resposne: " , response.data)
         return response.data.data;
     } catch (error:any) {
         if( error.response && error.response.data){
-            console.log("error:",error.response.data)
             if(error.response.status === 400){
                 throw new Error('Bad Request. Please check your input.');
             }

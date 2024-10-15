@@ -95,7 +95,7 @@ const HomePage = () => {
             <RoundButton
               label="Get started"
               customStyles="bg-primary px-6 py-3 font-bold text-white"
-              onClick={() => console.log("Sign up")}
+              onClick={() =>{} }
             />
           </form>
           <div className="flex items-center space-x-3 mt-10 mx-4 md:mx-0">
@@ -249,7 +249,7 @@ const HomePage = () => {
               <p className="text-sm mt-2 text-white  my-8">"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et aliqua. Ut enim ad minim veniam, quis ut aliquip ex ea commodo consequat."</p>
               <button
               className=" rounded-full  bg-dark_pink px-6 py-3 font-semibold text-[#000000]  max-h-12 hover:bg-opacity-80 whitespace-nowrap flex items-center gap-x-4"
-              onClick={() => console.log("Sign up")} >
+              onClick={() => alert("This Feature  is still under devlopment")} >
                 <p className="text-sm">Create Your Event for Free</p>
                 <HiOutlineArrowRight className="text-[#000000] text-md" />
               </button>

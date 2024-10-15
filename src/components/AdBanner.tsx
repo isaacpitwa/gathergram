@@ -21,7 +21,7 @@ const AdBanner = () => {
           <p className="text-white">Welcome { user.fullName ? user.fullName.split(' ')[0]: user.email}.</p>
           <button
               className=" rounded-full  bg-dark_pink px-6 py-3 font-semibold text-[#000000]  max-h-12 hover:bg-opacity-80 whitespace-nowrap flex items-center gap-x-4"
-              onClick={() => console.log("Sign up")} >
+              onClick={() =>  alert("This Feature  is still under devlopment")} >
                 <p className="text-sm">Proceed to Portal</p>
                 <HiOutlineArrowRight className="text-[#000000] text-md" />
               </button>
@@ -31,7 +31,7 @@ const AdBanner = () => {
           <RoundButton
             label="New"
             customStyles="bg-white px-6 py-1 text-black text-sm"
-            onClick={() => console.log("")}
+            onClick={() => {}}
           />
           <p className="text-white">We are excited to announce Lorem Ipsum.</p>
           <a

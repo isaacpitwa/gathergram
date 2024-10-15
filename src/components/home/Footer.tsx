@@ -119,7 +119,7 @@ const Footer = () => {
                 <RoundButton 
                  label="Help Center"
                  customStyles="bg-primary text-white px-6 py-2 text-sm"
-                 onClick={() => console.log("")}
+                 onClick={() =>  alert("This Feature  is still under devlopment")}
                 />
             </div>
 

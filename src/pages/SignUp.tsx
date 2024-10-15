@@ -101,7 +101,7 @@ const SignUpPage = () => {
   };
   const onFormSubmit = (e: React.MouseEvent<HTMLFormElement>) => {
     e.preventDefault();
-    console.log("Seleected region:", region)
+    console.log("Selected region:", region)
     if(!emailError && !passwordError && !fullnameError) {
      dispatch(signUpAction({ phoneNumber: phoneNumber || "", fullName:formData.fullName,email: formData.email, password: formData.password,}));
     }
@@ -310,17 +310,17 @@ const SignUpPage = () => {
           <SocialButton
             label="Google"
             icon="google"
-            onClick={() => console.log("Google Login")}
+            onClick={() =>  alert("This Feature  is still under devlopment")}
           />
           <SocialButton
             label="Facebook"
             icon="facebook"
-            onClick={() => console.log("Google Facebook")}
+            onClick={() =>  alert("This Feature  is still under devlopment")}
           />
           <SocialButton
             label="Apple"
             icon="apple"
-            onClick={() => console.log("Google Apple")}
+            onClick={() =>  alert("This Feature  is still under devlopment")}
           />
         </div>
         <p className="text-center mt-4 text-sm text-black">
