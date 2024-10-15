@@ -48,7 +48,7 @@ npm install
 3. Create a `.env` file in the root directory and add the following environment variables:
 
 ```bash
-REACT_APP_API_BASE_URL=https://jellyfish-app-sjgrf.ondigitalocean.app/
+REACT_APP_API_BASE_URL=https://jellyfish-app-sjgrf.ondigitalocean.app
 ```
 
 ## Running the App
@@ -73,7 +73,7 @@ The tests include unit and integration tests for various components, ensuring th
 
 ## Demo Video
 
-A walkthrough of the app is available in the demo video: [Demo Video Link](#)
+A walkthrough of the app is available in the demo video: [Demo Video Link](https://www.loom.com/share/ead9b61b05a546a3b0969c829844cad1?sid=5ef910bf-2613-49fc-989e-177e078dad33)
 
 ## Hosted Application
 
