@@ -2,16 +2,15 @@
 
 This repository contains the frontend challenge solution for GatherGram. The challenge involves building a fully functional React application based on a Figma design, including landing pages, login, and registration flows, while connecting to external APIs and handling user authentication.
 
-## Table of Contents
 
-- [Features](#features)
-- [Technologies Used](#technologies-used)
-- [Installation](#installation)
-- [Running the App](#running-the-app)
-- [Testing](#testing)
-- [Demo Video](#demo-video)
-- [Hosted Application](#hosted-application)
-- [License](#license)
+## Demo Video
+
+A walkthrough of the app is available in the demo video: [Demo Video Link](https://www.loom.com/share/ead9b61b05a546a3b0969c829844cad1?sid=5ef910bf-2613-49fc-989e-177e078dad33)
+
+## Hosted Application
+
+The live version of the application is hosted on Vercel and can be accessed via this link: [GatherGram Live](https://gathergram.vercel.app/)
+
 
 ## Features
 
@@ -70,14 +69,6 @@ npm test
 ```
 
 The tests include unit and integration tests for various components, ensuring that the landing page, authentication flows, and error handling work correctly.
-
-## Demo Video
-
-A walkthrough of the app is available in the demo video: [Demo Video Link](https://www.loom.com/share/ead9b61b05a546a3b0969c829844cad1?sid=5ef910bf-2613-49fc-989e-177e078dad33)
-
-## Hosted Application
-
-The live version of the application is hosted on Vercel and can be accessed via this link: [GatherGram Live](#)
 
 ## License
 
