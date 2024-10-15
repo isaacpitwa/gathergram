@@ -51,7 +51,7 @@ const LoginPage = () => {
     if(user){
       navigate(ROUTES.HOME)
     }
-  },[user])
+  },[user, navigate])
   return (
     <AuthLayout>
       <div className=" p-4 md:p-16 mb-2">

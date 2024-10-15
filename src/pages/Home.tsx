@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useState } from "react";
 import { TiUserAdd } from "react-icons/ti";
 import { MdReviews } from "react-icons/md";
 import { PiUsersFourFill } from "react-icons/pi";
@@ -23,8 +23,28 @@ import SquareImage from '../assets/images/landing.png'
 import { HiOutlineArrowRight } from "react-icons/hi";
 import ContactSection from "../components/home/ContactSection";
 import Footer from "../components/home/Footer";
+import { validateEmail } from "../utils/validators";
+import { useNavigate } from "react-router-dom";
+import { ROUTES } from "../routes";
 
 const HomePage = () => {
+  const [email,setEmail] = useState('')
+  const [emailError,setEmailError] = useState('');
+  const navigate = useNavigate()
+
+  const handleGetStarted = (e: React.FormEvent<HTMLFormElement>)=>{
+    e.preventDefault()
+    if(email){
+      // validate email
+      if( !validateEmail(email)){
+        setEmailError('Please enter a valid email')
+      }
+      else{
+        navigate(ROUTES.SIGNUP,{state: { email }})
+      }
+    }
+  }
+
   return (
     <div >
       <Header />
@@ -38,18 +58,24 @@ const HomePage = () => {
             “Create unforgettable memories with a personalized wedding platform
             for you and your guests.”
           </p>
-          <div className="flex  flex-col md:flex-row gap-x-4 mt-12 gap-y-4 ">
+          <form className="flex  flex-col md:flex-row gap-x-4 mt-12 gap-y-4  " onSubmit={handleGetStarted}>
+           <div className="w-full">
             <input
-              type="email"
-              placeholder="Enter your email address"
-              className="rounded-full bg-gray md:w-3/5 px-6 focus:border-primary h-10"
-            />
+                type="email"
+                placeholder="Enter your email address"
+                className="rounded-full bg-gray w-full px-6 focus:border-primary h-10"
+                name="email"
+                required
+                onChange={(e)=>setEmail(e.target.value)}
+              />
+              {emailError && <p className="text-xs text-red-500">{emailError}</p>}
+           </div>
             <RoundButton
               label="Get started"
               customStyles="bg-primary px-6 py-3 font-bold text-white"
               onClick={() => console.log("Sign up")}
             />
-          </div>
+          </form>
           <div className="flex items-center space-x-3 mt-10 mx-4 md:mx-0">
             {/* Profile images */}
             <div className="flex space-x-0">

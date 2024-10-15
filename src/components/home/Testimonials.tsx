@@ -1,7 +1,10 @@
 import React from "react";
 import Carousel from "../Carousel";
+import { Link } from "react-router-dom";
+import { ROUTES } from "../../routes";
 
 const Testimonials = () => {
+  
   return (
     <div className="py-16 items-center  sectionWrapper bg-[#FFF6FC]">
       <div className="flex   md:justify-between w-full  md:items-start items-center flex-col md:flex-row  gap-y-4">
@@ -11,7 +14,7 @@ const Testimonials = () => {
             </div>
             <div className="flex gap-x-4">
                 <button className="bg-white shadow-md px-4 text-black text-sm max-h-12 py-2 rounded-md">Our customers</button>
-                <button className="bg-primary px-4  text-white text-sm max-h-12 py-2 rounded-md">Create account</button>
+                <Link  to={ROUTES.SIGNUP} className="bg-primary px-4  text-white text-sm max-h-12 py-2 rounded-md">Create account</Link>
             </div>
       </div>
       <div className="my-4 w-full">

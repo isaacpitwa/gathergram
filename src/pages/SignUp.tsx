@@ -3,7 +3,7 @@ import React, { useState,useEffect } from "react";
 import { HiOutlineEye, HiOutlineEyeOff } from "react-icons/hi";
 import PhoneInput from "react-phone-number-input";
 import "react-phone-number-input/style.css";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import Select from "react-select";
 import SocialButton from "../components/SocialButton";
 import AuthLayout from "../layout/AuthLayout";
@@ -18,8 +18,6 @@ const options = [
   { value: "newyork", label: "🇺🇸 New York, USA" },
   { value: "capetown", label: "🇿🇦 Cape Town, South Africa" },
   { value: "london", label: "🇬🇧 London, UK" },
-
-
 ];
 
 const SignUpPage = () => {
@@ -31,9 +29,11 @@ const SignUpPage = () => {
   const [passwordError, setPasswordError] = useState("");
   const [emailError, setEmailError] = useState("");
   const [fullnameError, setFullnameError] = useState("");
+  const location = useLocation();
+
 
   const [formData, setFormData] = useState({
-    email: "",
+    email: location.state ? location.state?.email : "",
     password: "",
     fullName: "",
   });
@@ -130,7 +130,7 @@ const SignUpPage = () => {
     if(user){
       navigate(ROUTES.HOME)
     }
-  },[user])
+  },[user, navigate])
   return (
     <AuthLayout>
       <div className=" p-4 md:p-16 mb-2">
@@ -159,6 +159,7 @@ const SignUpPage = () => {
               required
               className="border p-4 rounded-md w-full border-[#32323266] h-12 mt-2"
               onChange={handleOnChange}
+              value={formData.email}
             />
             {emailError && <p className="text-xs text-red-500">{emailError}</p>}
           </div>
