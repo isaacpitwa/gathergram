@@ -1,4 +1,4 @@
-# GatherGram Frontend Challenge
+# GatherGram
 
 This repository contains the frontend challenge solution for GatherGram. The challenge involves building a fully functional React application based on a Figma design, including landing pages, login, and registration flows, while connecting to external APIs and handling user authentication.
 
