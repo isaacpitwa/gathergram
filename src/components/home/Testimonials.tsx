@@ -28,7 +28,7 @@ import { ROUTES } from "../../routes";
 const Testimonials = () => {
   
   return (
-    <div className="py-16 items-center  sectionWrapper bg-[#FFF6FC]">
+    <div className="py-16 items-center  sectionWrapper bg-[#FFF6FC]  hidden md:block">
       <div className="flex   md:justify-between w-full  md:items-start items-center flex-col md:flex-row  gap-y-4">
             <div className="md:text-left text-center">
                 <h3 className="text-xl font-semibold text-black  mb-3">Don’t just take our word for it</h3>

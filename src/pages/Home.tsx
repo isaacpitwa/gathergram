@@ -71,9 +71,9 @@ const HomePage = () => {
     <div >
       <Header />
       {/* Landing section */}
-      <section className="flex items-start gap-x-16 justify-between  pt-16 py-8 sectionWrapper  flex-col md:flex-row">
+      <section className="flex items-start gap-x-16 justify-between  pt-16 py-8 sectionWrapper  flex-col md:flex-row md:py-24 ">
         <div className="md:w-1/2">
-          <h2 className="text-4xl md:text-5xl font-bold">
+          <h2 className="text-4xl md:text-5xl font-bold  lg:text-6xl">
             “Plan, Share, and Celebrate Your Big Day in One Place”
           </h2>
           <p className="text-lg mt-8">
@@ -98,7 +98,7 @@ const HomePage = () => {
               onClick={() =>{} }
             />
           </form>
-          <div className="flex items-center space-x-3 mt-10 mx-4 md:mx-0">
+          <div className="flex items-center space-x-3 mt-10 mx-4 md:mx-0 gap-x-32 md:gap-x-1">
             {/* Profile images */}
             <div className="flex space-x-0">
               <img
@@ -141,9 +141,9 @@ const HomePage = () => {
             </div>
 
             {/* Text */}
-            <div className="text-black font-medium text-sm">
+            <p className="text-black font-medium text-sm">
               +2K People Joined!
-            </div>
+            </p>
           </div>
         </div>
         <div className="my-4 md:my-0">
