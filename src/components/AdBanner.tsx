@@ -3,6 +3,15 @@ import RoundButton from "./RoundButton";
 import { useSelector } from "react-redux";
 import { HiOutlineArrowRight } from "react-icons/hi";
 
+/**
+ * AdBanner component displays a banner with different content based on the user's authentication status.
+ * 
+ * - If the user is authenticated, it shows a welcome message with the user's first name or email and a button to proceed to the portal.
+ * - If the user is not authenticated, it shows a promotional message with a button to learn more.
+ * 
+ * @component
+ * @returns {JSX.Element} The rendered AdBanner component.
+ */
 const AdBanner = () => {
   const { user } = useSelector((state: any) => state.auth);
   return (

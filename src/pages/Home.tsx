@@ -27,6 +27,28 @@ import { validateEmail } from "../utils/validators";
 import { useNavigate } from "react-router-dom";
 import { ROUTES } from "../routes";
 
+/**
+ * HomePage component renders the main landing page of the application.
+ * 
+ * This component includes several sections:
+ * - Header: Displays the main header of the page.
+ * - Landing section: Contains a promotional message, email input form, and profile images.
+ * - Features section: Highlights the key features of the application.
+ * - How It Works section: Explains the steps to use the application.
+ * - PricingSection: Displays pricing information.
+ * - Testimonials: Shows user testimonials.
+ * - FaqSection: Provides frequently asked questions.
+ * - Banner Section: Encourages users to plan their wedding.
+ * - ContactSection: Provides contact information.
+ * - Footer: Displays the footer of the page.
+ * 
+ * The component uses several hooks and functions:
+ * - useState: Manages the state of email and emailError.
+ * - useNavigate: Provides navigation functionality.
+ * - handleGetStarted: Handles the form submission for getting started.
+ * 
+ * @returns {JSX.Element} The rendered HomePage component.
+ */
 const HomePage = () => {
   const [email,setEmail] = useState('')
   const [emailError,setEmailError] = useState('');

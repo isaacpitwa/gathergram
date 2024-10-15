@@ -20,6 +20,60 @@ const options = [
   { value: "london", label: "🇬🇧 London, UK" },
 ];
 
+/**
+ * SignUpPage component renders the sign-up form for new users.
+ * 
+ * @component
+ * 
+ * @returns {JSX.Element} The rendered SignUpPage component.
+ * 
+ * @example
+ * <SignUpPage />
+ * 
+ * @remarks
+ * This component uses various hooks such as `useState`, `useEffect`, `useDispatch`, and `useSelector` 
+ * to manage state and side effects. It also uses `useNavigate` for navigation and `useLocation` to 
+ * access the current location state.
+ * 
+ * @function
+ * @name SignUpPage
+ * 
+ * @description
+ * The SignUpPage component handles user registration by collecting user details such as email, 
+ * full name, region, phone number, and password. It performs validation on these inputs and 
+ * displays appropriate error messages. Upon successful validation, it dispatches the sign-up 
+ * action to the Redux store.
+ * 
+ * @hook
+ * @name useState
+ * @description Manages the state for showing password, phone number, region, form data, and error messages.
+ * 
+ * @hook
+ * @name useEffect
+ * @description Redirects the user to the home page if the user is already authenticated.
+ * 
+ * @hook
+ * @name useDispatch
+ * @description Dispatches actions to the Redux store.
+ * 
+ * @hook
+ * @name useSelector
+ * @description Selects the authentication state from the Redux store.
+ * 
+ * @hook
+ * @name useNavigate
+ * @description Navigates to different routes.
+ * 
+ * @hook
+ * @name useLocation
+ * @description Accesses the current location state.
+ * 
+ * @param {React.MouseEvent<HTMLButtonElement>} handlePasswordToggle - Toggles the visibility of the password input field.
+ * @param {React.MouseEvent<HTMLFormElement>} onFormSubmit - Handles the form submission and dispatches the sign-up action.
+ * @param {React.ChangeEvent<HTMLInputElement>} handleOnChange - Handles changes to the input fields and performs validation.
+ * 
+ * @constant {Object} customStyles - Custom styles for the region select input.
+ */
 const SignUpPage = () => {
   const [showPassword, setShowPassword] = useState(false);
   const [phoneNumber, setPhoneNumber] = useState<E164Number | undefined>(

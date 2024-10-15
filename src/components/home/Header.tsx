@@ -8,6 +8,52 @@ import AdBanner from '../AdBanner';
 import { useNavigate } from 'react-router-dom';
 import { ROUTES } from '../../routes';
 
+/**
+ * Header component that displays the navigation bar and handles menu toggling.
+ * 
+ * @component
+ * @returns {JSX.Element} The rendered header component.
+ * 
+ * @example
+ * <Header />
+ * 
+ * @remarks
+ * This component includes:
+ * - A logo that links to the home page.
+ * - Navigation links to different sections of the page.
+ * - Sign in and Get started buttons.
+ * - A responsive menu that toggles visibility on smaller screens.
+ * 
+ * @function
+ * @name Header
+ * 
+ * @description
+ * The Header component manages the state of the menu (open/closed) and provides navigation functionality.
+ * It uses the `useNavigate` hook from `react-router-dom` for navigation and `useState` for managing the menu state.
+ * 
+ * @hook
+ * @name useState
+ * @description Manages the state of the menu (open/closed).
+ * 
+ * @hook
+ * @name useNavigate
+ * @description Provides navigation functionality.
+ * 
+ * @inner
+ * @function
+ * @name toggleMenu
+ * @description Toggles the menu open/closed state.
+ * 
+ * @inner
+ * @function
+ * @name onSignInClicked
+ * @description Navigates to the login page.
+ * 
+ * @inner
+ * @function
+ * @name onGetStartedClicked
+ * @description Navigates to the signup page.
+ */
 const Header = () => {
     const [isMenuOpen,setIsMenuOpen] = useState(false)
     const navigate = useNavigate();

@@ -53,6 +53,28 @@ const slides = [
     },
 ];
 
+/**
+ * Carousel component that displays a set of images in a sliding carousel format.
+ * 
+ * @component
+ * @param {CarouselProps} props - The properties for the Carousel component.
+ * @param {number} [props.imagesPerSlide=4] - The number of images to display per slide.
+ * 
+ * @returns {JSX.Element} The rendered Carousel component.
+ * 
+ * @example
+ * <Carousel imagesPerSlide={3} />
+ * 
+ * @remarks
+ * This component uses a sliding mechanism to transition between different sets of images.
+ * It includes navigation buttons to move to the previous or next set of images.
+ * 
+ * @function
+ * @name Carousel
+ * 
+ * @typedef {Object} CarouselProps
+ * @property {number} [imagesPerSlide=4] - The number of images to display per slide.
+ */
 const Carousel: React.FC<CarouselProps> = ({ imagesPerSlide = 4 }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const images = [Slide1, Slide2, Slide3, Slide4, Slide5];

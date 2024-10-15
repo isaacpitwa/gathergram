@@ -3,6 +3,28 @@ import Carousel from "../Carousel";
 import { Link } from "react-router-dom";
 import { ROUTES } from "../../routes";
 
+/**
+ * Testimonials component renders a section with a title, description, buttons, and a carousel.
+ * 
+ * @returns {JSX.Element} The rendered Testimonials component.
+ * 
+ * @remarks
+ * This component is styled with Tailwind CSS classes and includes a title, a description,
+ * two buttons ("Our customers" and "Create account"), and a carousel component.
+ * 
+ * @example
+ * ```tsx
+ * import Testimonials from './Testimonials';
+ * 
+ * const App = () => (
+ *   <div>
+ *     <Testimonials />
+ *   </div>
+ * );
+ * 
+ * export default App;
+ * ```
+ */
 const Testimonials = () => {
   
   return (

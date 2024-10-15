@@ -1,6 +1,20 @@
 import React, {useState} from "react";
 import PricingPlan from "./PricingPlan";
 
+/**
+ * An array of pricing plans for different subscription periods.
+ * Each plan includes details such as label, price, description, features, and period.
+ * 
+ * @constant
+ * @type {Array<Array<Object>>}
+ * @property {string} label - The name of the pricing plan.
+ * @property {number} price - The cost of the pricing plan.
+ * @property {string} description - A brief description of the pricing plan.
+ * @property {string} features_label - A label describing the features included in the plan.
+ * @property {Array<string>} features - A list of features included in the pricing plan.
+ * @property {string} period - The subscription period for the pricing plan (e.g., "month", "year").
+ * @property {boolean} isPopular - Indicates whether the pricing plan is the most popular option.
+ */
 const pricingPlans = [[
         {
           label: "Basic",

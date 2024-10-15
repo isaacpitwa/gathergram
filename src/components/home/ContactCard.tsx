@@ -19,6 +19,17 @@ interface ContactCardProps {
     icon: IconType;
 }
 
+/**
+ * ContactCard component displays a card with contact information.
+ *
+ * @component
+ * @param {Object} props - The properties object.
+ * @param {string} props.title - The title of the contact card.
+ * @param {string} props.description - The description of the contact card.
+ * @param {string} props.contact - The contact information.
+ * @param {string} props.icon - The icon identifier for the contact card.
+ * @returns {JSX.Element} The rendered ContactCard component.
+ */
 const ContactCard: React.FC<ContactCardProps> = ({ title, description, contact, icon }) => {
     return (
         <div className='bg-[#FFF6FC]  p-8 md:w-1/4 w-full rounded-md'>

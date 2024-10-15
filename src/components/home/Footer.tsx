@@ -3,6 +3,23 @@ import LogoWhite from '../../assets/images/logo-white.png'
 import { FaTwitter,FaFacebook,FaLinkedin,FaYoutube } from "react-icons/fa";
 import RoundButton from "../RoundButton";
 
+/**
+ * Footer component for the Gathergram website.
+ *
+ * This component renders the footer section of the website, which includes:
+ * - A newsletter subscription form.
+ * - Links to social media platforms.
+ * - Navigation links to various sections of the website.
+ * - Support and partner information.
+ * - Contact information.
+ * - Legal and policy links.
+ *
+ * @component
+ * @example
+ * return (
+ *   <Footer />
+ * )
+ */
 const Footer = () => {
   return (
     <footer className="">

@@ -10,6 +10,47 @@ import { useDispatch, useSelector } from "react-redux";
 import { AppDispatch } from "../redux/store";
 import { loginAction } from "../redux/slices/AuthSlice";
 
+/**
+ * LoginPage component renders the login page for the application.
+ * It includes form fields for email and password, and handles form submission.
+ * 
+ * @component
+ * @returns {JSX.Element} The rendered login page component.
+ * 
+ * @example
+ * <LoginPage />
+ * 
+ * @remarks
+ * - Uses `useState` to manage form data, password visibility, and email error state.
+ * - Uses `useDispatch` to dispatch login actions.
+ * - Uses `useSelector` to access authentication state from the Redux store.
+ * - Uses `useNavigate` to navigate to the home page upon successful login.
+ * - Validates email format and displays error messages accordingly.
+ * - Includes social login buttons for Google, Facebook, and Apple.
+ * 
+ * @function
+ * @name LoginPage
+ * 
+ * @typedef {Object} FormData
+ * @property {string} email - The email address entered by the user.
+ * @property {string} password - The password entered by the user.
+ * 
+ * @typedef {Object} AuthState
+ * @property {boolean} loading - Indicates if the login request is in progress.
+ * @property {string} error - Error message if the login request fails.
+ * @property {Object} user - User object if the login request is successful.
+ * 
+ * @typedef {Object} AppDispatch
+ * 
+ * @typedef {Object} ROUTES
+ * @property {string} HOME - The route to the home page.
+ * @property {string} SIGNUP - The route to the signup page.
+ * 
+ * @typedef {Object} SocialButtonProps
+ * @property {string} label - The label for the social button.
+ * @property {string} icon - The icon for the social button.
+ * @property {function} onClick - The click handler for the social button.
+ */
 const LoginPage = () => {
   const [showPassword, setShowPassword] = useState(false);
   const [formData, setFormData] = useState({ email:'', password:''});
