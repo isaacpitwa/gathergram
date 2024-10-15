@@ -20,7 +20,8 @@ const StarRating: React.FC<StarRatingProps> = ({rating}) => {
         <div className='flex gap-x-1 my-2'>
             {
                 Array.from({length: 5}, (_, index) => (
-                    <TiStarFullOutline key={index} className={`${(index) < rating ? 'text-[#FF9529]' : 'text-gray'} text-lg`} />
+                    <TiStarFullOutline key={index} className={`${(index) < rating ? 'text-[#FF9529]' : 'text-gray'} text-lg`}  role="img"
+                    aria-label={ (index) < rating ? 'highlighted' : 'gray'}/>
                 ))
             }
         </div>

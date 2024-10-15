@@ -28,7 +28,7 @@ interface SocialButtonProps {
  */
 const SocialButton : React.FC<SocialButtonProps>  = ({label, icon, onClick}) => {
     return (
-        <button className='flex gap-x-2 px-8  py-2 border border-[#323232] rounded-md items-center justify-center md:justify-start'>
+        <button className='flex gap-x-2 px-8  py-2 border border-[#323232] rounded-md items-center justify-center md:justify-start' onClick={onClick}>
             <img src={socialIcons[icon]} alt="Google icon" className='w-4'/>
             <span>{label}</span>
         </button>
