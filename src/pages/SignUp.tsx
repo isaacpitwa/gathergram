@@ -1,14 +1,14 @@
 import { E164Number } from "libphonenumber-js/types.cjs";
-import React, { useState } from "react";
+import React, { useState,useEffect } from "react";
 import { HiOutlineEye, HiOutlineEyeOff } from "react-icons/hi";
 import PhoneInput from "react-phone-number-input";
 import "react-phone-number-input/style.css";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Select from "react-select";
 import SocialButton from "../components/SocialButton";
 import AuthLayout from "../layout/AuthLayout";
 import { ROUTES } from "../routes";
-import { hasLowerCase, hasNumber, hasSpecialChar, hasUpperCase, isMinLength, validateEmail, validatePassword } from "../utils/validators";
+import { hasLowerCase, hasNumber, hasSpecialChar, hasUpperCase, isMinLength, validateEmail } from "../utils/validators";
 import { useDispatch, useSelector } from "react-redux";
 import { AppDispatch } from "../redux/store";
 import { signUpAction } from "../redux/slices/AuthSlice";
@@ -39,6 +39,7 @@ const SignUpPage = () => {
   });
   const dispatch = useDispatch<AppDispatch>();
   const {loading,error,user} = useSelector((state:any) => state.auth);
+  const navigate = useNavigate()
 
   const handlePasswordToggle = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
@@ -46,7 +47,7 @@ const SignUpPage = () => {
   };
   const onFormSubmit = (e: React.MouseEvent<HTMLFormElement>) => {
     e.preventDefault();
-    console.log("form Data: ", {...formData,phoneNumber,region});
+    console.log("Seleected region:", region)
     if(!emailError && !passwordError && !fullnameError) {
      dispatch(signUpAction({ phoneNumber: phoneNumber || "", fullName:formData.fullName,email: formData.email, password: formData.password,}));
     }
@@ -124,6 +125,12 @@ const SignUpPage = () => {
       alignItems: 'center',
     }),
   };
+
+  useEffect(() => {
+    if(user){
+      navigate(ROUTES.HOME)
+    }
+  },[user])
   return (
     <AuthLayout>
       <div className=" p-4 md:p-16 mb-2">
@@ -140,6 +147,9 @@ const SignUpPage = () => {
           Enter your details below to signup or sign in with existing account.
         </p>
         <form className=" flex flex-col gap-y-4 md:gap-y-8 pt-8" onSubmit={onFormSubmit}>
+        {
+          error && <p className="text-red-500 text-center">{error}</p>
+        }
           <div>
             <label className="text-bold text-sm">Email Address</label>
             <input

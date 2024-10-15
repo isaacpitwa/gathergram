@@ -1,9 +1,9 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import AuthLayout from "../layout/AuthLayout";
 import Logo from "../assets/images/logo2.png";
 import SocialButton from "../components/SocialButton";
 import { HiOutlineEye, HiOutlineEyeOff } from "react-icons/hi";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { ROUTES } from "../routes";
 import { validateEmail } from "../utils/validators";
 import { useDispatch, useSelector } from "react-redux";
@@ -16,6 +16,7 @@ const LoginPage = () => {
   const [emailError, setEmailError] = useState("");
   const dispatch = useDispatch<AppDispatch>();
   const {loading,error,user} = useSelector((state:any) => state.auth);
+  const navigate =  useNavigate();
 
 
   const handlePasswordToggle = (e: React.MouseEvent<HTMLButtonElement>) => {
@@ -45,6 +46,12 @@ const LoginPage = () => {
     }
     
   };
+
+  useEffect(() => {
+    if(user){
+      navigate(ROUTES.HOME)
+    }
+  },[user])
   return (
     <AuthLayout>
       <div className=" p-4 md:p-16 mb-2">

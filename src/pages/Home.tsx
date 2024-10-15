@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { TiUserAdd } from "react-icons/ti";
 import { MdReviews } from "react-icons/md";
 import { PiUsersFourFill } from "react-icons/pi";
